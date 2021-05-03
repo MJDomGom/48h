@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-may-2021 18:19:46 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojos.Partidos" table="partidos" catalog="48h" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="resultado" type="string">
+            <column name="resultado" length="10" not-null="true" />
+        </property>
+        <property name="fecha" type="timestamp">
+            <column name="fecha" length="19" not-null="true" />
+        </property>
+        <set name="equipos" table="equipo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPartido" not-null="true" />
+            </key>
+            <one-to-many class="pojos.Equipo" />
+        </set>
+        <set name="gestionas" table="gestiona" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPartido" not-null="true" />
+            </key>
+            <one-to-many class="pojos.Gestiona" />
+        </set>
+        <set name="juegans" table="juegan" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPartido" not-null="true" />
+            </key>
+            <one-to-many class="pojos.Juegan" />
+        </set>
+    </class>
+</hibernate-mapping>
