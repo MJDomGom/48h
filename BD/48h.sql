@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2021 a las 18:11:10
+-- Tiempo de generación: 04-05-2021 a las 16:25:58
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -47,7 +47,7 @@ CREATE TABLE `estadisticas` (
   `rojas` int(11) NOT NULL,
   `azules` int(11) NOT NULL,
   `ganadorEdc` varchar(500) NOT NULL,
-  `idEquipo` varchar(100) NOT NULL
+  `idPartido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -140,7 +140,7 @@ ALTER TABLE `equipo`
 --
 ALTER TABLE `estadisticas`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idEquipo` (`idEquipo`);
+  ADD KEY `idPartido` (`idPartido`);
 
 --
 -- Indices de la tabla `gestiona`
@@ -217,7 +217,7 @@ ALTER TABLE `equipo`
 -- Filtros para la tabla `estadisticas`
 --
 ALTER TABLE `estadisticas`
-  ADD CONSTRAINT `estadisticas_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`nombre`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `estadisticas_ibfk_1` FOREIGN KEY (`idPartido`) REFERENCES `partidos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `gestiona`
