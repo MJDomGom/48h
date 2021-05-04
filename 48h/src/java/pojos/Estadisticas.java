@@ -1,5 +1,5 @@
 package pojos;
-// Generated 03-may-2021 18:19:45 by Hibernate Tools 4.3.1
+// Generated 04-may-2021 16:30:55 by Hibernate Tools 4.3.1
 
 
 
@@ -10,7 +10,7 @@ public class Estadisticas  implements java.io.Serializable {
 
 
      private Integer id;
-     private Equipo equipo;
+     private Partidos partidos;
      private int golesTot;
      private int tirosPuerta;
      private int amarillas;
@@ -21,8 +21,8 @@ public class Estadisticas  implements java.io.Serializable {
     public Estadisticas() {
     }
 
-    public Estadisticas(Equipo equipo, int golesTot, int tirosPuerta, int amarillas, int rojas, int azules, String ganadorEdc) {
-       this.equipo = equipo;
+    public Estadisticas(Partidos partidos, int golesTot, int tirosPuerta, int amarillas, int rojas, int azules, String ganadorEdc) {
+       this.partidos = partidos;
        this.golesTot = golesTot;
        this.tirosPuerta = tirosPuerta;
        this.amarillas = amarillas;
@@ -38,12 +38,12 @@ public class Estadisticas  implements java.io.Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    public Equipo getEquipo() {
-        return this.equipo;
+    public Partidos getPartidos() {
+        return this.partidos;
     }
     
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
+    public void setPartidos(Partidos partidos) {
+        this.partidos = partidos;
     }
     public int getGolesTot() {
         return this.golesTot;

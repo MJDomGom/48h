@@ -1,5 +1,5 @@
 package pojos;
-// Generated 03-may-2021 18:19:45 by Hibernate Tools 4.3.1
+// Generated 04-may-2021 16:30:55 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -15,6 +15,7 @@ public class Partidos  implements java.io.Serializable {
      private Integer id;
      private String resultado;
      private Date fecha;
+     private Set estadisticases = new HashSet(0);
      private Set equipos = new HashSet(0);
      private Set gestionas = new HashSet(0);
      private Set juegans = new HashSet(0);
@@ -27,9 +28,10 @@ public class Partidos  implements java.io.Serializable {
         this.resultado = resultado;
         this.fecha = fecha;
     }
-    public Partidos(String resultado, Date fecha, Set equipos, Set gestionas, Set juegans) {
+    public Partidos(String resultado, Date fecha, Set estadisticases, Set equipos, Set gestionas, Set juegans) {
        this.resultado = resultado;
        this.fecha = fecha;
+       this.estadisticases = estadisticases;
        this.equipos = equipos;
        this.gestionas = gestionas;
        this.juegans = juegans;
@@ -55,6 +57,13 @@ public class Partidos  implements java.io.Serializable {
     
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+    public Set getEstadisticases() {
+        return this.estadisticases;
+    }
+    
+    public void setEstadisticases(Set estadisticases) {
+        this.estadisticases = estadisticases;
     }
     public Set getEquipos() {
         return this.equipos;
