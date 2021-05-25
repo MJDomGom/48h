@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,5 +15,14 @@
     </head>
     <body>
         <h1>LISTADO PARTIDOS</h1>
+
+        <s:form action="redirectInstalaciones">
+            <s:submit name="instalaciones" value="Instalaciones"></s:submit>
+        </s:form>
+        <s:if test="%{#session.rol == 'Gerente'}">
+            <s:form action="redirectUsuario">
+                <s:submit name="usuarios" value="Usuarios"></s:submit>
+            </s:form>
+        </s:if>
     </body>
 </html>

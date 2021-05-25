@@ -1,5 +1,5 @@
 package pojos;
-// Generated 04-may-2021 16:30:55 by Hibernate Tools 4.3.1
+// Generated 24-may-2021 18:33:00 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,7 +13,7 @@ public class Instalaciones  implements java.io.Serializable {
 
      private Integer id;
      private String nombre;
-     private int direccion;
+     private String direccion;
      private int capacidad;
      private Set juegans = new HashSet(0);
 
@@ -21,12 +21,12 @@ public class Instalaciones  implements java.io.Serializable {
     }
 
 	
-    public Instalaciones(String nombre, int direccion, int capacidad) {
+    public Instalaciones(String nombre, String direccion, int capacidad) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.capacidad = capacidad;
     }
-    public Instalaciones(String nombre, int direccion, int capacidad, Set juegans) {
+    public Instalaciones(String nombre, String direccion, int capacidad, Set juegans) {
        this.nombre = nombre;
        this.direccion = direccion;
        this.capacidad = capacidad;
@@ -47,11 +47,11 @@ public class Instalaciones  implements java.io.Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public int getDireccion() {
+    public String getDireccion() {
         return this.direccion;
     }
     
-    public void setDireccion(int direccion) {
+    public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
     public int getCapacidad() {

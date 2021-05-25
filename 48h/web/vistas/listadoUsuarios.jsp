@@ -13,25 +13,25 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Listado Instalaciones</h1>
+        <h1>Listado Usuarios</h1>
 
         <table border="1">
             <thead>
-            <th>ID</th>
+            <th>Nick</th>
             <th>Nombre</th>
-            <th>Direccion</th>
-            <th>Capacidad</th>
+            <th>Contraseña</th>
+            <th>Rol</th>
             <th>¿Borrar?</th>
         </thead>
         <tbody>
-            <s:iterator value="listaInstalaciones" >
+            <s:iterator value="listaUsuarios">
                 <tr>
-                    <td><s:property value="%{id}"></s:property></td>
+                    <td><s:property value="%{nick}"></s:property></td>
                     <td><s:property value="%{nombre}"></s:property></td>
-                    <td><s:property value="%{direccion}"></s:property></td>
-                    <td><s:property value="%{capacidad}"></s:property></td>
+                    <td><s:property value="%{password}"></s:property></td>
+                    <td><s:property value="%{rol}"></s:property></td>
                     <td>
-                        <s:form action="deleteInstalaciones">
+                        <s:form action="deleteUsuarios">
                             <s:hidden name="oculto" value="%{id}"></s:hidden>
                             <s:submit name="delete" value="Borrar"></s:submit>
                         </s:form>

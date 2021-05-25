@@ -15,5 +15,19 @@
             <result name="success">vistas/listadoPartidos.jsp</result>
             <result name="error">vistas/login.jsp</result>
         </action>
+        
+        <action name="redirectUsuario" class="acciones.cargarUsuarios">
+            <result>vistas/listadoUsuarios.jsp</result>
+        </action>
+    </package>
+    
+    <package name="instalaciones" extends="struts-default">
+        <action name="redirectInstalaciones" class="acciones.cargarInstalaciones">
+            <result>vistas/listadoInstalaciones.jsp</result>
+        </action>
+        
+        <action name="deleteInstalaciones" class="acciones.borrarInstalaciones">
+            <result name="success">vistas/listadoInstalaciones.jsp</result>
+        </action>
     </package>
 </struts>
