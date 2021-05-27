@@ -34,12 +34,13 @@
                         <td><s:property value="%{password}"></s:property></td>
                         <td><s:property value="%{rol}"></s:property></td>
                             <td>
-                            <s:form action="updateUsuarioRed">
-                                <s:submit name="delete" value="Modificar"></s:submit>
+                            <s:form action="updateUsuarioRedirect">
+                                <s:hidden name="oculto" value="%{nick}"></s:hidden>
+                                <s:submit name="update" value="Modificar"></s:submit>
                             </s:form>
                         </td>
                         <td>
-                            <s:form action="deleteUsuarios">
+                            <s:form action="deleteUsuario">
                                 <s:hidden name="oculto" value="%{nick}"></s:hidden>
                                 <s:submit name="delete" value="Borrar"></s:submit>
                             </s:form>

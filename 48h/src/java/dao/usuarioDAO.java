@@ -49,4 +49,34 @@ public class usuarioDAO {
         tx.commit();
     }
 
+    public void deleteUsuario(String oculto) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Usuario del = new Usuario();
+        del.setNick(oculto);
+        Transaction tx = session.beginTransaction();
+        session.delete(del);
+        tx.commit();
+    }
+
+    public Usuario getUsuario(String oculto) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Usuario upd = new Usuario();
+        List<Usuario> listaUsuariosUpd = listarUsuarios();
+        for (int i = 0; i < listaUsuariosUpd.size(); i++) {
+            if (listaUsuariosUpd.get(i).getNick().equals(oculto)) {
+                upd = listaUsuariosUpd.get(i);
+            }
+        }
+        return upd;
+    }
+
+    public List<Usuario> updateUsuario(Usuario upd) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        session.update(upd);
+        tx.commit();
+        listaUsuarios = listarUsuarios();
+        return listaUsuarios;
+    }
+
 }

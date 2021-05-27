@@ -20,7 +20,8 @@ public class borrarInstalaciones extends ActionSupport {
     public borrarInstalaciones() {
     }
 
-    public String execute() throws Exception { new dao.instalacionesDAO().borrarInstalaciones(this.getOculto());
+    public String execute() throws Exception { 
+        new dao.instalacionesDAO().borrarInstalaciones(this.getOculto());
         return SUCCESS;
     }
 
