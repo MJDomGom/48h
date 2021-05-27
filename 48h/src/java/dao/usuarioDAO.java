@@ -19,9 +19,8 @@ import pojos.Usuario;
 public class usuarioDAO {
 
     Session session = null;
-    
-    public List<Usuario> listaUsuarios;
 
+    public List<Usuario> listaUsuarios;
 
     public Usuario comprobarLogin(String nick, String password) {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -39,6 +38,15 @@ public class usuarioDAO {
         listaUsuarios = q.list();
         tx.commit();
         return listaUsuarios;
+    }
+
+    public void addUsuario(String nick, String nombre, String password) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        String rol = "Gerente";
+        Transaction tx = session.beginTransaction();
+        Usuario user = new Usuario(nick, nombre, password, rol);
+        session.save(user);
+        tx.commit();
     }
 
 }

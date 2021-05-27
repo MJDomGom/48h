@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-05-2021 a las 16:17:09
+-- Tiempo de generación: 27-05-2021 a las 20:03:18
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -47,6 +47,17 @@ CREATE TABLE `estadisticas` (
   `rojas` int(11) NOT NULL,
   `azules` int(11) NOT NULL,
   `ganadorEdc` varchar(500) NOT NULL,
+  `idPartido` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `gestiona`
+--
+
+CREATE TABLE `gestiona` (
+  `nick` varchar(45) NOT NULL,
   `idPartido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -99,14 +110,24 @@ CREATE TABLE `juegan` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `jugados`
+--
+
+CREATE TABLE `jugados` (
+  `idPartido` int(11) NOT NULL,
+  `idEquipo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `partidos`
 --
 
 CREATE TABLE `partidos` (
   `id` int(11) NOT NULL,
   `resultado` varchar(10) NOT NULL,
-  `fecha` datetime NOT NULL,
-  `NombrePartido` varchar(100) NOT NULL
+  `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -128,7 +149,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`nick`, `nombre`, `password`, `rol`) VALUES
 ('Fede', 'Federico', 'Fede1234', 'Cliente'),
-('Manu', 'Manuel Jesus', 'Manu1234', 'Gerente');
+('Manu', 'Manuel Jesus', 'Manu1234', 'Gerente'),
+('Mari', 'Maria', 'Maria1234', 'Gerente');
 
 --
 -- Índices para tablas volcadas
@@ -139,7 +161,7 @@ INSERT INTO `usuario` (`nick`, `nombre`, `password`, `rol`) VALUES
 --
 ALTER TABLE `equipo`
   ADD PRIMARY KEY (`nombre`),
-  ADD KEY `idPartido` (`idPartido`);
+  ADD KEY `FK_iwaajmuuwswt7mcdrm5p1cb8m` (`idPartido`);
 
 --
 -- Indices de la tabla `estadisticas`
@@ -147,6 +169,13 @@ ALTER TABLE `equipo`
 ALTER TABLE `estadisticas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idPartido` (`idPartido`);
+
+--
+-- Indices de la tabla `gestiona`
+--
+ALTER TABLE `gestiona`
+  ADD PRIMARY KEY (`nick`,`idPartido`),
+  ADD KEY `FK_iyrxxfrxj7h5ljslv6ypxxvsl` (`idPartido`);
 
 --
 -- Indices de la tabla `instalaciones`
@@ -167,6 +196,14 @@ ALTER TABLE `integrante`
 ALTER TABLE `juegan`
   ADD KEY `idPartido` (`idPartido`,`idInstalacion`),
   ADD KEY `idInstalacion` (`idInstalacion`);
+
+--
+-- Indices de la tabla `jugados`
+--
+ALTER TABLE `jugados`
+  ADD PRIMARY KEY (`idPartido`),
+  ADD KEY `idPartido` (`idPartido`),
+  ADD KEY `idEquipo` (`idEquipo`);
 
 --
 -- Indices de la tabla `partidos`
@@ -207,10 +244,23 @@ ALTER TABLE `partidos`
 --
 
 --
+-- Filtros para la tabla `equipo`
+--
+ALTER TABLE `equipo`
+  ADD CONSTRAINT `FK_iwaajmuuwswt7mcdrm5p1cb8m` FOREIGN KEY (`idPartido`) REFERENCES `partidos` (`id`);
+
+--
 -- Filtros para la tabla `estadisticas`
 --
 ALTER TABLE `estadisticas`
   ADD CONSTRAINT `estadisticas_ibfk_1` FOREIGN KEY (`idPartido`) REFERENCES `partidos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `gestiona`
+--
+ALTER TABLE `gestiona`
+  ADD CONSTRAINT `FK_b07nft7c0h5bvr47a7a7g0hok` FOREIGN KEY (`nick`) REFERENCES `usuario` (`nick`),
+  ADD CONSTRAINT `FK_iyrxxfrxj7h5ljslv6ypxxvsl` FOREIGN KEY (`idPartido`) REFERENCES `partidos` (`id`);
 
 --
 -- Filtros para la tabla `integrante`
@@ -224,6 +274,18 @@ ALTER TABLE `integrante`
 ALTER TABLE `juegan`
   ADD CONSTRAINT `juegan_ibfk_1` FOREIGN KEY (`idPartido`) REFERENCES `partidos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `juegan_ibfk_2` FOREIGN KEY (`idInstalacion`) REFERENCES `instalaciones` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `jugados`
+--
+ALTER TABLE `jugados`
+  ADD CONSTRAINT `jugados_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`nombre`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `partidos`
+--
+ALTER TABLE `partidos`
+  ADD CONSTRAINT `partidos_ibfk_1` FOREIGN KEY (`id`) REFERENCES `jugados` (`idPartido`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

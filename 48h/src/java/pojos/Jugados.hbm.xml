@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27-may-2021 19:55:40 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojos.Jugados" table="jugados" catalog="48h" optimistic-lock="version">
+        <id name="idPartido" type="int">
+            <column name="idPartido" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="equipo" class="pojos.Equipo" fetch="select">
+            <column name="idEquipo" length="100" not-null="true" />
+        </many-to-one>
+        <one-to-one name="partidos" class="pojos.Partidos"></one-to-one>
+    </class>
+</hibernate-mapping>

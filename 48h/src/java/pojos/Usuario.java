@@ -1,5 +1,5 @@
 package pojos;
-// Generated 24-may-2021 18:33:00 by Hibernate Tools 4.3.1
+// Generated 27-may-2021 19:55:39 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -15,7 +15,7 @@ public class Usuario  implements java.io.Serializable {
      private String nombre;
      private String password;
      private String rol;
-     private Set gestionas = new HashSet(0);
+     private Set partidoses = new HashSet(0);
 
     public Usuario() {
     }
@@ -27,12 +27,12 @@ public class Usuario  implements java.io.Serializable {
         this.password = password;
         this.rol = rol;
     }
-    public Usuario(String nick, String nombre, String password, String rol, Set gestionas) {
+    public Usuario(String nick, String nombre, String password, String rol, Set partidoses) {
        this.nick = nick;
        this.nombre = nombre;
        this.password = password;
        this.rol = rol;
-       this.gestionas = gestionas;
+       this.partidoses = partidoses;
     }
    
     public String getNick() {
@@ -63,12 +63,12 @@ public class Usuario  implements java.io.Serializable {
     public void setRol(String rol) {
         this.rol = rol;
     }
-    public Set getGestionas() {
-        return this.gestionas;
+    public Set getPartidoses() {
+        return this.partidoses;
     }
     
-    public void setGestionas(Set gestionas) {
-        this.gestionas = gestionas;
+    public void setPartidoses(Set partidoses) {
+        this.partidoses = partidoses;
     }
 
 

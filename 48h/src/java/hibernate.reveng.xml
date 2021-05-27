@@ -41,12 +41,13 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="48h"/>
-  <table-filter match-name="usuario"/>
-  <table-filter match-name="estadisticas"/>
-  <table-filter match-name="equipo"/>
-  <table-filter match-name="juegan"/>
   <table-filter match-name="gestiona"/>
   <table-filter match-name="instalaciones"/>
+  <table-filter match-name="juegan"/>
+  <table-filter match-name="equipo"/>
+  <table-filter match-name="jugados"/>
+  <table-filter match-name="usuario"/>
   <table-filter match-name="partidos"/>
   <table-filter match-name="integrante"/>
+  <table-filter match-name="estadisticas"/>
 </hibernate-reverse-engineering>

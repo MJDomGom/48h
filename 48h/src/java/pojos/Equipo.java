@@ -1,5 +1,5 @@
 package pojos;
-// Generated 24-may-2021 18:33:00 by Hibernate Tools 4.3.1
+// Generated 27-may-2021 19:55:39 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,6 +14,7 @@ public class Equipo  implements java.io.Serializable {
      private String nombre;
      private Partidos partidos;
      private String nomCorto;
+     private Set jugadoses = new HashSet(0);
      private Set integrantes = new HashSet(0);
 
     public Equipo() {
@@ -25,10 +26,11 @@ public class Equipo  implements java.io.Serializable {
         this.partidos = partidos;
         this.nomCorto = nomCorto;
     }
-    public Equipo(String nombre, Partidos partidos, String nomCorto, Set integrantes) {
+    public Equipo(String nombre, Partidos partidos, String nomCorto, Set jugadoses, Set integrantes) {
        this.nombre = nombre;
        this.partidos = partidos;
        this.nomCorto = nomCorto;
+       this.jugadoses = jugadoses;
        this.integrantes = integrantes;
     }
    
@@ -52,6 +54,13 @@ public class Equipo  implements java.io.Serializable {
     
     public void setNomCorto(String nomCorto) {
         this.nomCorto = nomCorto;
+    }
+    public Set getJugadoses() {
+        return this.jugadoses;
+    }
+    
+    public void setJugadoses(Set jugadoses) {
+        this.jugadoses = jugadoses;
     }
     public Set getIntegrantes() {
         return this.integrantes;

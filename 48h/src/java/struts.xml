@@ -19,6 +19,15 @@
         <action name="redirectUsuario" class="acciones.cargarUsuarios">
             <result>vistas/listadoUsuarios.jsp</result>
         </action>
+        
+        <action name="addUsuarioRedirect">
+            <result>vistas/addUsuarios.jsp</result>
+        </action>
+        
+        <action name="addUsuario" class="acciones.addUsuario">
+            <result name="success">vistas/listadoUsuarios.jsp</result>
+            <result name="input">vistas/addUsuarios.jsp</result>
+        </action>
     </package>
     
     <package name="instalaciones" extends="struts-default">

@@ -1,5 +1,5 @@
 package pojos;
-// Generated 24-may-2021 18:33:00 by Hibernate Tools 4.3.1
+// Generated 27-may-2021 19:55:39 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -13,27 +13,30 @@ public class Partidos  implements java.io.Serializable {
 
 
      private Integer id;
+     private Jugados jugados;
      private String resultado;
      private Date fecha;
      private Set estadisticases = new HashSet(0);
+     private Set usuarios = new HashSet(0);
      private Set equipos = new HashSet(0);
-     private Set gestionas = new HashSet(0);
      private Set juegans = new HashSet(0);
 
     public Partidos() {
     }
 
 	
-    public Partidos(String resultado, Date fecha) {
+    public Partidos(Jugados jugados, String resultado, Date fecha) {
+        this.jugados = jugados;
         this.resultado = resultado;
         this.fecha = fecha;
     }
-    public Partidos(String resultado, Date fecha, Set estadisticases, Set equipos, Set gestionas, Set juegans) {
+    public Partidos(Jugados jugados, String resultado, Date fecha, Set estadisticases, Set usuarios, Set equipos, Set juegans) {
+       this.jugados = jugados;
        this.resultado = resultado;
        this.fecha = fecha;
        this.estadisticases = estadisticases;
+       this.usuarios = usuarios;
        this.equipos = equipos;
-       this.gestionas = gestionas;
        this.juegans = juegans;
     }
    
@@ -43,6 +46,13 @@ public class Partidos  implements java.io.Serializable {
     
     public void setId(Integer id) {
         this.id = id;
+    }
+    public Jugados getJugados() {
+        return this.jugados;
+    }
+    
+    public void setJugados(Jugados jugados) {
+        this.jugados = jugados;
     }
     public String getResultado() {
         return this.resultado;
@@ -65,19 +75,19 @@ public class Partidos  implements java.io.Serializable {
     public void setEstadisticases(Set estadisticases) {
         this.estadisticases = estadisticases;
     }
+    public Set getUsuarios() {
+        return this.usuarios;
+    }
+    
+    public void setUsuarios(Set usuarios) {
+        this.usuarios = usuarios;
+    }
     public Set getEquipos() {
         return this.equipos;
     }
     
     public void setEquipos(Set equipos) {
         this.equipos = equipos;
-    }
-    public Set getGestionas() {
-        return this.gestionas;
-    }
-    
-    public void setGestionas(Set gestionas) {
-        this.gestionas = gestionas;
     }
     public Set getJuegans() {
         return this.juegans;
