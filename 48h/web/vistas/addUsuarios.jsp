@@ -15,6 +15,11 @@
     </head>
     <body>
         <h1>Alta de Usuarios</h1>
+        <s:form action="redirectLogout">
+            <s:submit name="logout" value="Cerrar Sesion"></s:submit>
+        </s:form>
+
+
         <s:form action="addUsuario">
             <s:textfield name="nick" label="Nick del usuario"></s:textfield>
             <s:textfield name="nombre" label="Nombre del usuario"></s:textfield>

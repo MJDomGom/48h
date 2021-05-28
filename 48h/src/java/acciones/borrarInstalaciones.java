@@ -6,7 +6,10 @@
 package acciones;
 
 import com.opensymphony.xwork2.ActionSupport;
+import dao.instalacionesDAO;
+import java.util.List;
 import java.util.Map;
+import pojos.Instalaciones;
 
 /**
  *
@@ -16,12 +19,14 @@ public class borrarInstalaciones extends ActionSupport {
 
     private Map session;
     private int oculto;
+    private List<Instalaciones> listaInstalaciones;
 
     public borrarInstalaciones() {
     }
 
     public String execute() throws Exception { 
         new dao.instalacionesDAO().borrarInstalaciones(this.getOculto());
+        listaInstalaciones = new instalacionesDAO().listadoInstalaciones();
         return SUCCESS;
     }
 
@@ -39,6 +44,14 @@ public class borrarInstalaciones extends ActionSupport {
 
     public void setOculto(int oculto) {
         this.oculto = oculto;
+    }
+
+    public List<Instalaciones> getListaInstalaciones() {
+        return listaInstalaciones;
+    }
+
+    public void setListaInstalaciones(List<Instalaciones> listaInstalaciones) {
+        this.listaInstalaciones = listaInstalaciones;
     }
 
 }

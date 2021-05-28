@@ -15,6 +15,10 @@
     </head>
     <body>
         <h1>Modificar Usuario</h1>
+        <s:form action="redirectLogout">
+            <s:submit name="logout" value="Cerrar Sesion"></s:submit>
+        </s:form>
+
         <s:form action="updateUsuario">
             <s:textfield name="nombreUpd" label="Nombre Usuario" value="%{session.NombreUpd}"></s:textfield>
             <s:textfield name="passUpd" label="Contraseña" value="%{session.PassUpd}"></s:textfield>

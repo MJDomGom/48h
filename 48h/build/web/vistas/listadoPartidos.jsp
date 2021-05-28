@@ -16,6 +16,10 @@
     <body>
         <h1>LISTADO PARTIDOS</h1>
 
+        <s:form action="redirectLogout">
+            <s:submit name="logout" value="Cerrar Sesion"></s:submit>
+        </s:form>
+
         <s:form action="redirectInstalaciones">
             <s:submit name="instalaciones" value="Instalaciones"></s:submit>
         </s:form>

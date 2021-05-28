@@ -15,6 +15,11 @@
     <body>
         <h1>Listado Usuarios</h1>
 
+        <s:form action="redirectLogout">
+            <s:submit name="logout" value="Cerrar Sesion"></s:submit>
+        </s:form>
+
+
         <s:if test="%{#session.rol == 'Gerente'}">
 
             <table border="1">

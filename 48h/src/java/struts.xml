@@ -10,7 +10,7 @@
         </action>
     </package>
     
-    <package name="login" extends="struts-default">
+    <package name="usuario" extends="struts-default">
         <action name="loginCheck" class = "acciones.accionesLogin">
             <result name="success">vistas/listadoPartidos.jsp</result>
             <result name="error">vistas/login.jsp</result>
@@ -40,6 +40,10 @@
         
         <action name="deleteUsuario" class="acciones.borrarUsuario">
             <result name="success">vistas/listadoUsuarios.jsp</result>
+        </action>
+        
+        <action name="redirectLogout" class="acciones.logout">
+            <result name="success">vistas/login.jsp</result>
         </action>
         
         

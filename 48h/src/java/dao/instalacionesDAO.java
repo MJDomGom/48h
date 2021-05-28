@@ -5,8 +5,10 @@
  */
 package dao;
 
+import WS.InstalacionesCliente;
 import acciones.HibernateUtil;
 import java.util.List;
+import javax.ws.rs.core.GenericType;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -19,6 +21,7 @@ import pojos.Instalaciones;
 public class instalacionesDAO {
 
     Session session = null;
+    InstalacionesCliente cliente = new InstalacionesCliente();
 
     public List<Instalaciones> listaInstalaciones;
 
@@ -28,6 +31,8 @@ public class instalacionesDAO {
         Query q = session.createQuery("From Instalaciones");
         listaInstalaciones = (List<Instalaciones>) q.list();
         tx.commit();
+        //GenericType <List<Instalaciones>> tipoGenerico = new GenericType<List<Instalaciones>>(){};
+        //listaInstalaciones = cliente.findAll_XML(tipoGenerico);
         return listaInstalaciones;
     }
 
