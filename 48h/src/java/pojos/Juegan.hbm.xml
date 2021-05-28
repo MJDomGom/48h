@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27-may-2021 19:55:40 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojos.Juegan" table="juegan" catalog="48h" optimistic-lock="version">
+        <composite-id name="id" class="pojos.JueganId">
+            <key-property name="idPartido" type="int">
+                <column name="idPartido" />
+            </key-property>
+            <key-property name="idInstalacion" type="int">
+                <column name="idInstalacion" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="instalaciones" class="pojos.Instalaciones" update="false" insert="false" fetch="select">
+            <column name="idInstalacion" not-null="true" />
+        </many-to-one>
+        <many-to-one name="partidos" class="pojos.Partidos" update="false" insert="false" fetch="select">
+            <column name="idPartido" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
