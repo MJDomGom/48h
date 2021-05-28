@@ -30,7 +30,7 @@
         
         <action name="updateUsuario" class="acciones.updateUsuario">
             <result name="success">vistas/listadoUsuarios.jsp</result>
-            <result name="inpput">vistas/listadoUsuarios.jsp</result>
+            <result name="input">vistas/updateUsuarios.jsp</result>
         </action>
         
         <action name="addUsuario" class="acciones.addUsuario">
@@ -57,5 +57,24 @@
         <action name="deleteInstalaciones" class="acciones.borrarInstalaciones">
             <result name="success">vistas/listadoInstalaciones.jsp</result>
         </action>
+        
+        <action name="addInstalacionesRedirect">
+            <result>vistas/addInstalaciones.jsp</result>
+        </action>
+        
+        <action name="addInstalacion" class="acciones.addInstalacion">
+            <result name="success">vistas/listadoInstalaciones.jsp</result>
+            <result name="input">vistas/addInstalaciones.jsp</result>
+        </action>
+        
+        <action name="updateInstalacionesRedirect" class="acciones.updateRedirectInstalaciones">
+            <result name="success">vistas/updateInstalaciones.jsp</result>
+        </action>
+        
+        <action name="updateInstalacion" class="acciones.updateInstalacion">
+            <result name="success">vistas/listadoInstalaciones.jsp</result>
+            <result name="input">vistas/updateInstalaciones.jsp</result>
+        </action>
+        
     </package>
 </struts>

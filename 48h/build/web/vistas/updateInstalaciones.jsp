@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +14,18 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Modificar Instalacion</h1>
+
+        <s:form action="redirectLogout">
+            <s:submit name="logout" value="Cerrar Sesion"></s:submit>
+        </s:form>
+
+        <s:form action="updateInstalacion">
+            <s:textfield name="nombreUpd" label="Nombre" value="%{session.NombreUpd}"></s:textfield>
+            <s:textfield name="dirUpd" label="Direccion" value="%{session.DirUpd}"></s:textfield>
+            <s:textfield name="capUpd" label = "Capacidad" type="number" min="0" value="%{session.CapUpd}"></s:textfield>
+            <s:hidden name="idUpd" value="%{session.IdUpd}"></s:hidden>
+            <s:submit name="btnupdate" value="Modificar"></s:submit>
+        </s:form>
     </body>
 </html>

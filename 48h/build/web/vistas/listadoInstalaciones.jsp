@@ -19,12 +19,19 @@
             <s:submit name="logout" value="Cerrar Sesion"></s:submit>
         </s:form>
 
+        <s:if test="%{#session.rol == 'Gerente'}">
+            <s:form action="addInstalacionesRedirect">
+                <s:submit name="add" value="Añadir"></s:submit>
+            </s:form>
+        </s:if>
+
         <table border="1">
             <thead>
             <th>Nombre</th>
             <th>Direccion</th>
             <th>Capacidad</th>
                 <s:if test="%{#session.rol == 'Gerente'}">
+                <th>¿Modificar?</th>
                 <th>¿Borrar?</th>
                 </s:if>
         </thead>
@@ -35,6 +42,12 @@
                     <td><s:property value="%{direccion}"></s:property></td>
                     <td><s:property value="%{capacidad}"></s:property></td>
                     <s:if test="%{#session.rol == 'Gerente'}">
+                        <td>
+                            <s:form action="updateInstalacionesRedirect">
+                                <s:hidden name="oculto" value="%{id}"></s:hidden>
+                                <s:submit name="delete" value="Modificar"></s:submit>
+                            </s:form>
+                        </td>
                         <td>
                             <s:form action="deleteInstalaciones">
                                 <s:hidden name="oculto" value="%{id}"></s:hidden>
