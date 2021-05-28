@@ -19,10 +19,8 @@
         <s:form action="redirectInstalaciones">
             <s:submit name="instalaciones" value="Instalaciones"></s:submit>
         </s:form>
-        <s:if test="%{#session.rol == 'Gerente'}">
-            <s:form action="redirectUsuario">
-                <s:submit name="usuarios" value="Usuarios"></s:submit>
-            </s:form>
-        </s:if>
+        <s:form action="redirectUsuario">
+            <s:submit name="usuarios" value="Usuarios"></s:submit>
+        </s:form>
     </body>
 </html>

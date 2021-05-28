@@ -24,10 +24,25 @@
             <result>vistas/addUsuarios.jsp</result>
         </action>
         
+        <action name="updateUsuarioRedirect" class="acciones.updateRedirect">
+            <result name="success">vistas/updateUsuarios.jsp</result>
+        </action>
+        
+        <action name="updateUsuario" class="acciones.updateUsuario">
+            <result name="success">vistas/listadoUsuarios.jsp</result>
+            <result name="inpput">vistas/listadoUsuarios.jsp</result>
+        </action>
+        
         <action name="addUsuario" class="acciones.addUsuario">
             <result name="success">vistas/listadoUsuarios.jsp</result>
             <result name="input">vistas/addUsuarios.jsp</result>
         </action>
+        
+        <action name="deleteUsuario" class="acciones.borrarUsuario">
+            <result name="success">vistas/listadoUsuarios.jsp</result>
+        </action>
+        
+        
     </package>
     
     <package name="instalaciones" extends="struts-default">
