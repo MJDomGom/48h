@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +36,7 @@
                 </s:if>
         </thead>
         <tbody>
-            <s:iterator value="listaInstalaciones" >
+            <s:iterator value="listaInstalaciones">
                 <tr>
                     <td><s:property value="%{nombre}"></s:property></td>
                     <td><s:property value="%{direccion}"></s:property></td>

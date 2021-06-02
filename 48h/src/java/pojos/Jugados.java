@@ -1,5 +1,5 @@
 package pojos;
-// Generated 27-may-2021 19:55:39 by Hibernate Tools 4.3.1
+// Generated 02-jun-2021 17:56:08 by Hibernate Tools 4.3.1
 
 
 
@@ -9,30 +9,24 @@ package pojos;
 public class Jugados  implements java.io.Serializable {
 
 
-     private int idPartido;
+     private Integer id;
      private Equipo equipo;
      private Partidos partidos;
 
     public Jugados() {
     }
 
-	
-    public Jugados(int idPartido, Equipo equipo) {
-        this.idPartido = idPartido;
-        this.equipo = equipo;
-    }
-    public Jugados(int idPartido, Equipo equipo, Partidos partidos) {
-       this.idPartido = idPartido;
+    public Jugados(Equipo equipo, Partidos partidos) {
        this.equipo = equipo;
        this.partidos = partidos;
     }
    
-    public int getIdPartido() {
-        return this.idPartido;
+    public Integer getId() {
+        return this.id;
     }
     
-    public void setIdPartido(int idPartido) {
-        this.idPartido = idPartido;
+    public void setId(Integer id) {
+        this.id = id;
     }
     public Equipo getEquipo() {
         return this.equipo;

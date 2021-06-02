@@ -1,16 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 27-may-2021 19:55:40 by Hibernate Tools 4.3.1 -->
+<!-- Generated 02-jun-2021 17:56:08 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="pojos.Partidos" table="partidos" catalog="48h" optimistic-lock="version">
-        <id name="id" type="java.lang.Integer">
-            <column name="id" />
-            <generator class="foreign">
-                <param name="property">jugados</param>
-            </generator>
+        <id name="idPartido" type="java.lang.Integer">
+            <column name="idPartido" />
+            <generator class="identity" />
         </id>
-        <one-to-one name="jugados" class="pojos.Jugados" constrained="true"></one-to-one>
+        <property name="local" type="string">
+            <column name="Local" length="10" not-null="true" />
+        </property>
+        <property name="visitante" type="string">
+            <column name="Visitante" length="10" not-null="true" />
+        </property>
         <property name="resultado" type="string">
             <column name="resultado" length="10" not-null="true" />
         </property>
@@ -23,19 +26,11 @@
             </key>
             <one-to-many class="pojos.Estadisticas" />
         </set>
-        <set name="usuarios" table="gestiona" inverse="true" lazy="true" fetch="select">
+        <set name="jugadoses" table="jugados" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="idPartido" not-null="true" />
             </key>
-            <many-to-many entity-name="pojos.Usuario">
-                <column name="nick" length="45" not-null="true" />
-            </many-to-many>
-        </set>
-        <set name="equipos" table="equipo" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="idPartido" not-null="true" />
-            </key>
-            <one-to-many class="pojos.Equipo" />
+            <one-to-many class="pojos.Jugados" />
         </set>
         <set name="juegans" table="juegan" inverse="true" lazy="true" fetch="select">
             <key>

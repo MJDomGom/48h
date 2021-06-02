@@ -75,6 +75,16 @@
             <result name="success">vistas/listadoInstalaciones.jsp</result>
             <result name="input">vistas/updateInstalaciones.jsp</result>
         </action>
+    </package>
+    
+    <package name="partidos" extends="struts-default">
+        <action name="deletePartidos" class="acciones.borrarPartidos">
+            <result name="success">vistas/listadoPartidos.jsp</result>
+        </action>
+        
+        <action name="addPartidosRedirect" class="acciones.redirectAddPartidos">
+            <result>vistas/addPartido.jsp</result>
+        </action>
         
     </package>
 </struts>

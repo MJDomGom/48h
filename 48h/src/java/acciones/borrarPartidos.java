@@ -5,26 +5,27 @@
  */
 package acciones;
 
+import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
-import dao.usuarioDAO;
+import dao.partidosDAO;
 import java.util.List;
-import pojos.Usuario;
+import pojos.Partidos;
 
 /**
  *
  * @author mjdom
  */
-public class borrarUsuario extends ActionSupport {
+public class borrarPartidos extends ActionSupport {
 
     private String oculto;
-    private List<Usuario> listaUsuarios;
+    private List<Partidos> listaPartidos;
 
-    public borrarUsuario() {
+    public borrarPartidos() {
     }
 
     public String execute() throws Exception {
-        new usuarioDAO().deleteUsuario(this.getOculto());
-        listaUsuarios = new usuarioDAO().listarUsuarios();
+        new partidosDAO().deletePartidos(Integer.parseInt(this.getOculto()));
+        listaPartidos = new partidosDAO().listadoPartidos();
         return SUCCESS;
     }
 
@@ -36,11 +37,12 @@ public class borrarUsuario extends ActionSupport {
         this.oculto = oculto;
     }
 
-    public List<Usuario> getListaUsuarios() {
-        return listaUsuarios;
+    public List<Partidos> getListaPartidos() {
+        return listaPartidos;
     }
 
-    public void setListaUsuarios(List<Usuario> listaUsuarios) {
-        this.listaUsuarios = listaUsuarios;
+    public void setListaPartidos(List<Partidos> listaPartido) {
+        this.listaPartidos = listaPartido;
     }
+
 }

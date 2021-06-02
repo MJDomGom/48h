@@ -1,5 +1,5 @@
 package pojos;
-// Generated 27-may-2021 19:55:39 by Hibernate Tools 4.3.1
+// Generated 02-jun-2021 17:56:08 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,47 +12,55 @@ import java.util.Set;
 public class Partidos  implements java.io.Serializable {
 
 
-     private Integer id;
-     private Jugados jugados;
+     private Integer idPartido;
+     private String local;
+     private String visitante;
      private String resultado;
      private Date fecha;
      private Set estadisticases = new HashSet(0);
-     private Set usuarios = new HashSet(0);
-     private Set equipos = new HashSet(0);
+     private Set jugadoses = new HashSet(0);
      private Set juegans = new HashSet(0);
 
     public Partidos() {
     }
 
 	
-    public Partidos(Jugados jugados, String resultado, Date fecha) {
-        this.jugados = jugados;
+    public Partidos(String local, String visitante, String resultado, Date fecha) {
+        this.local = local;
+        this.visitante = visitante;
         this.resultado = resultado;
         this.fecha = fecha;
     }
-    public Partidos(Jugados jugados, String resultado, Date fecha, Set estadisticases, Set usuarios, Set equipos, Set juegans) {
-       this.jugados = jugados;
+    public Partidos(String local, String visitante, String resultado, Date fecha, Set estadisticases, Set jugadoses, Set juegans) {
+       this.local = local;
+       this.visitante = visitante;
        this.resultado = resultado;
        this.fecha = fecha;
        this.estadisticases = estadisticases;
-       this.usuarios = usuarios;
-       this.equipos = equipos;
+       this.jugadoses = jugadoses;
        this.juegans = juegans;
     }
    
-    public Integer getId() {
-        return this.id;
+    public Integer getIdPartido() {
+        return this.idPartido;
     }
     
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdPartido(Integer idPartido) {
+        this.idPartido = idPartido;
     }
-    public Jugados getJugados() {
-        return this.jugados;
+    public String getLocal() {
+        return this.local;
     }
     
-    public void setJugados(Jugados jugados) {
-        this.jugados = jugados;
+    public void setLocal(String local) {
+        this.local = local;
+    }
+    public String getVisitante() {
+        return this.visitante;
+    }
+    
+    public void setVisitante(String visitante) {
+        this.visitante = visitante;
     }
     public String getResultado() {
         return this.resultado;
@@ -75,19 +83,12 @@ public class Partidos  implements java.io.Serializable {
     public void setEstadisticases(Set estadisticases) {
         this.estadisticases = estadisticases;
     }
-    public Set getUsuarios() {
-        return this.usuarios;
+    public Set getJugadoses() {
+        return this.jugadoses;
     }
     
-    public void setUsuarios(Set usuarios) {
-        this.usuarios = usuarios;
-    }
-    public Set getEquipos() {
-        return this.equipos;
-    }
-    
-    public void setEquipos(Set equipos) {
-        this.equipos = equipos;
+    public void setJugadoses(Set jugadoses) {
+        this.jugadoses = jugadoses;
     }
     public Set getJuegans() {
         return this.juegans;
