@@ -38,6 +38,15 @@
             <result name="input">vistas/addUsuarios.jsp</result>
         </action>
         
+        <action name="registrarRedirect">
+            <result>vistas/registrarUsuario.jsp</result>
+        </action>
+        
+        <action name="registrarUsuario" class="acciones.registrarUsuario">
+            <result name="success">vistas/listadoUsuarios.jsp</result>
+            <result name="input">vistas/registrarUsuarios.jsp</result>
+        </action>
+        
         <action name="deleteUsuario" class="acciones.borrarUsuario">
             <result name="success">vistas/listadoUsuarios.jsp</result>
         </action>
@@ -81,10 +90,5 @@
         <action name="deletePartidos" class="acciones.borrarPartidos">
             <result name="success">vistas/listadoPartidos.jsp</result>
         </action>
-        
-        <action name="addPartidosRedirect" class="acciones.redirectAddPartidos">
-            <result>vistas/addPartido.jsp</result>
-        </action>
-        
     </package>
 </struts>

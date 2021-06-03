@@ -48,6 +48,15 @@ public class usuarioDAO {
         session.save(user);
         tx.commit();
     }
+    
+    public void registrarUsuario(String nick, String nombre, String password) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        String rol = "Cliente";
+        Transaction tx = session.beginTransaction();
+        Usuario user = new Usuario(nick, nombre, password, rol);
+        session.save(user);
+        tx.commit();
+    }
 
     public void deleteUsuario(String oculto) {
         session = HibernateUtil.getSessionFactory().getCurrentSession();

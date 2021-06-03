@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +14,13 @@
     </head>
     <body>
         <h1>Listado Instalaciones</h1>
+
+        <table>
+            <th>             <s:form action="redirectUsuario">
+                    <s:submit name="usuarios" value="Usuarios"></s:submit>
+                </s:form>
+            </th>
+        </table>
 
         <s:form action="redirectLogout">
             <s:submit name="logout" value="Cerrar Sesion"></s:submit>
@@ -36,7 +43,7 @@
                 </s:if>
         </thead>
         <tbody>
-            <s:iterator value="listaInstalaciones" >
+            <s:iterator value="listaInstalaciones">
                 <tr>
                     <td><s:property value="%{nombre}"></s:property></td>
                     <td><s:property value="%{direccion}"></s:property></td>

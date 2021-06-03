@@ -16,10 +16,6 @@
     <body>
         <h1>LISTADO PARTIDOS</h1>
         <table>
-            <th>        <s:form action="redirectLogout">
-                    <s:submit name="logout" value="Cerrar Sesion"></s:submit>
-                </s:form>
-            </th>
             <th>               <s:form action="redirectInstalaciones">
                     <s:submit name="instalaciones" value="Instalaciones"></s:submit>
                 </s:form>
@@ -36,7 +32,7 @@
             <th>Visitante</th>
             <th>Resultado</th>
             <th>Fecha</th>
-            <th>Estadisticas</th>
+            <th>Instalacion</th>
                 <s:if test="%{#session.rol == 'Gerente'}">
                 <th>¿Borrar?</th>
                 </s:if>
@@ -48,13 +44,8 @@
                     <td><s:property value="%{visitante}"></s:property></td>
                     <td><s:property value="%{resultado}"></s:property></td>
                     <td><s:property value="%{fecha}"></s:property></td>
+                    <td><s:property value="listaJuegan"></s:property></td>
                     <s:if test="%{#session.rol == 'Gerente'}">
-                        <td>
-                            <s:form action="estadisticasRedirect">
-                                <s:hidden name="oculto" value="%{idPartido}"></s:hidden>
-                                <s:submit name="delete" value="Modificar"></s:submit>
-                            </s:form>
-                        </td>
                         <td>
                             <s:form action="deletePartidos">
                                 <s:hidden name="oculto" value="%{idPartido}"></s:hidden>

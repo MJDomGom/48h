@@ -15,16 +15,52 @@
     </head>
     <body>
         <h1>LISTADO PARTIDOS</h1>
+        <table>
+            <th>               <s:form action="redirectInstalaciones">
+                    <s:submit name="instalaciones" value="Instalaciones"></s:submit>
+                </s:form>
+            </th>
+            <th>             <s:form action="redirectUsuario">
+                    <s:submit name="usuarios" value="Usuarios"></s:submit>
+                </s:form>
+            </th>
+        </table>
 
-        <s:form action="redirectLogout">
-            <s:submit name="logout" value="Cerrar Sesion"></s:submit>
+        <table border="1">
+            <thead>
+            <th>Local</th>
+            <th>Visitante</th>
+            <th>Resultado</th>
+            <th>Fecha</th>
+            <th>Instalacion</th>
+                <s:if test="%{#session.rol == 'Gerente'}">
+                <th>¿Borrar?</th>
+                </s:if>
+        </thead>
+        <tbody>
+            <s:iterator value="listaPartidos">
+                <tr>
+                    <td><s:property value="%{local}"></s:property></td>
+                    <td><s:property value="%{visitante}"></s:property></td>
+                    <td><s:property value="%{resultado}"></s:property></td>
+                    <td><s:property value="%{fecha}"></s:property></td>
+                    <td><s:property value="listaJuegan"></s:property></td>
+                    <s:if test="%{#session.rol == 'Gerente'}">
+                        <td>
+                            <s:form action="deletePartidos">
+                                <s:hidden name="oculto" value="%{idPartido}"></s:hidden>
+                                <s:submit name="delete" value="Borrar"></s:submit>
+                            </s:form>
+                        </td>
+                    </s:if>
+                </tr>
+            </s:iterator>
+        </tbody>
+    </table>
+    <s:if test="%{#session.rol == 'Gerente'}">
+        <s:form action="addPartidosRedirect">
+            <s:submit name="add" value="Añadir Partidos"></s:submit>
         </s:form>
-
-        <s:form action="redirectInstalaciones">
-            <s:submit name="instalaciones" value="Instalaciones"></s:submit>
-        </s:form>
-        <s:form action="redirectUsuario">
-            <s:submit name="usuarios" value="Usuarios"></s:submit>
-        </s:form>
-    </body>
+    </s:if>
+</body>
 </html>

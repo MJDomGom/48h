@@ -46,9 +46,7 @@
                 </s:form>
 
                 <!---- BOTÓN REGISTRAR: submit ---->
-                <s:form action="irA">
-                    <s:hidden name="accionAEjecutar" value="registrar"></s:hidden>
-                    
+                <s:form action="registrarRedirect">
                     <s:submit type='submit' cssClass="boton" name='registrar' value='Regístrate'>
                     </s:submit>
                 </s:form>

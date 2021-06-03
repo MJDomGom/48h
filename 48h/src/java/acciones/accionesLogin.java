@@ -12,6 +12,8 @@ import dao.partidosDAO;
 import dao.usuarioDAO;
 import java.util.List;
 import java.util.Map;
+import pojos.Instalaciones;
+import pojos.Juegan;
 import pojos.Partidos;
 import pojos.Usuario;
 
@@ -21,6 +23,8 @@ public class accionesLogin extends ActionSupport {
     private String password;
     private Map session;
     private List<Partidos> listaPartidos;
+    private List<Instalaciones> listaInstalaciones;
+    private List<Juegan> listaJuegan;
     public accionesLogin() {
     }
 
@@ -32,6 +36,8 @@ public class accionesLogin extends ActionSupport {
             session.put("password", this.getPassword());
             session.put("rol", user.getRol());
             listaPartidos = new partidosDAO().listadoPartidos();
+            listaJuegan = new partidosDAO().listadoJuegan();
+            listaInstalaciones = new partidosDAO().buscarInstalaciones(listaPartidos, listaJuegan);
             return SUCCESS;
         } else {
             addFieldError("login", "El usuario o la contraseña no existen en el sistema");
@@ -64,5 +70,23 @@ public class accionesLogin extends ActionSupport {
     public void setListaPartidos(List<Partidos> listaPartidos) {
         this.listaPartidos = listaPartidos;
     }
+
+    public List<Instalaciones> getListaInstalaciones() {
+        return listaInstalaciones;
+    }
+
+    public void setListaInstalaciones(List<Instalaciones> listaInstalaciones) {
+        this.listaInstalaciones = listaInstalaciones;
+    }
+
+    public List<Juegan> getListaJuegan() {
+        return listaJuegan;
+    }
+
+    public void setListaJuegan(List<Juegan> listaJuegan) {
+        this.listaJuegan = listaJuegan;
+    }
+    
+    
 
 }

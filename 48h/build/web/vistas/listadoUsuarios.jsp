@@ -15,6 +15,21 @@
     <body>
         <h1>Listado Usuarios</h1>
 
+        <table>
+            <th>        <s:form action="redirectLogout">
+                    <s:submit name="logout" value="Cerrar Sesion"></s:submit>
+                </s:form>
+            </th>
+            <th>               <s:form action="redirectInstalaciones">
+                    <s:submit name="instalaciones" value="Instalaciones"></s:submit>
+                </s:form>
+            </th>
+            <th>             <s:form action="redirectUsuario">
+                    <s:submit name="usuarios" value="Usuarios"></s:submit>
+                </s:form>
+            </th>
+        </table>
+
         <s:form action="redirectLogout">
             <s:submit name="logout" value="Cerrar Sesion"></s:submit>
         </s:form>
