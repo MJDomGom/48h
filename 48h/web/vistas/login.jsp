@@ -5,14 +5,13 @@
 
 <html>
     <head>
-        <title>Login 48h</title> 
+        <title>Login - 48h</title> 
         <%---- CCS ----%>
-        <link href="${pageContext.request.contextPath}/vistas/styles/estilo_login.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/vistas/assets/css/estilo_login.css" rel="stylesheet" type="text/css"/>
 
         <%-- FAVICON --%>
-        <link rel="icon" type="image/ico" href="${pageContext.request.contextPath}/vistas/imagenes/favicon.ico">
+        <link rel="icon" type="image/ico" href="${pageContext.request.contextPath}/vistas/assets/img/favicon.ico">
     </head>
-
     <body>
 
         <main>
@@ -20,7 +19,7 @@
             <div id='ventanaLogin'>
 
                 <!---- LOGO 48H ---->
-                <figure><img src="${pageContext.request.contextPath}/vistas/imagenes/Logo-48h.png" alt='logo'/></figure>
+                <figure><img src="${pageContext.request.contextPath}/vistas/assets/img/Logo-48h.png" alt='logo'/></figure>
 
                 <!---- FORMULARIO DE INICIO DE SESIÓN ---->
                 <s:form action="loginCheck" validate="true">
@@ -51,7 +50,7 @@
                     </s:submit>
                 </s:form>
             </div>
-                
+
         </main>
 
     </body>

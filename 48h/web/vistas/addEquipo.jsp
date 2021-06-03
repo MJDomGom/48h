@@ -1,15 +1,14 @@
-<%-- 
-    Document   : addEquipo
-    Created on : 03-may-2021, 18:24:29
-    Author     : fedev
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Añadir Equipo - 48h</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        
+        <%-- FAVICON --%>
+        <link rel="icon" type="image/ico" href="${pageContext.request.contextPath}/vistas/assets/img/favicon.ico">
+        
     </head>
     <body>
         <h1>Hello World!</h1>

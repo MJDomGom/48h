@@ -10,10 +10,85 @@
         </action>
     </package>
     
-    <package name="login" extends="struts-default">
+    <package name="usuario" extends="struts-default">
         <action name="loginCheck" class = "acciones.accionesLogin">
             <result name="success">vistas/listadoPartidos.jsp</result>
             <result name="error">vistas/login.jsp</result>
+        </action>
+        
+        <action name="redirectUsuario" class="acciones.cargarUsuarios">
+            <result>vistas/listadoUsuarios.jsp</result>
+        </action>
+        
+        <action name="addUsuarioRedirect">
+            <result>vistas/addUsuarios.jsp</result>
+        </action>
+        
+        <action name="updateUsuarioRedirect" class="acciones.updateRedirect">
+            <result name="success">vistas/updateUsuarios.jsp</result>
+        </action>
+        
+        <action name="updateUsuario" class="acciones.updateUsuario">
+            <result name="success">vistas/listadoUsuarios.jsp</result>
+            <result name="input">vistas/updateUsuarios.jsp</result>
+        </action>
+        
+        <action name="addUsuario" class="acciones.addUsuario">
+            <result name="success">vistas/listadoUsuarios.jsp</result>
+            <result name="input">vistas/addUsuarios.jsp</result>
+        </action>
+        
+        <action name="registrarRedirect">
+            <result>vistas/registrarUsuario.jsp</result>
+        </action>
+        
+        <action name="registrarUsuario" class="acciones.registrarUsuario">
+            <result name="success">vistas/listadoUsuarios.jsp</result>
+            <result name="input">vistas/registrarUsuarios.jsp</result>
+        </action>
+        
+        <action name="deleteUsuario" class="acciones.borrarUsuario">
+            <result name="success">vistas/listadoUsuarios.jsp</result>
+        </action>
+        
+        <action name="redirectLogout" class="acciones.logout">
+            <result name="success">vistas/login.jsp</result>
+        </action>
+        
+        
+    </package>
+    
+    <package name="instalaciones" extends="struts-default">
+        <action name="redirectInstalaciones" class="acciones.cargarInstalaciones">
+            <result>vistas/listadoInstalaciones.jsp</result>
+        </action>
+        
+        <action name="deleteInstalaciones" class="acciones.borrarInstalaciones">
+            <result name="success">vistas/listadoInstalaciones.jsp</result>
+        </action>
+        
+        <action name="addInstalacionesRedirect">
+            <result>vistas/addInstalaciones.jsp</result>
+        </action>
+        
+        <action name="addInstalacion" class="acciones.addInstalacion">
+            <result name="success">vistas/listadoInstalaciones.jsp</result>
+            <result name="input">vistas/addInstalaciones.jsp</result>
+        </action>
+        
+        <action name="updateInstalacionesRedirect" class="acciones.updateRedirectInstalaciones">
+            <result name="success">vistas/updateInstalaciones.jsp</result>
+        </action>
+        
+        <action name="updateInstalacion" class="acciones.updateInstalacion">
+            <result name="success">vistas/listadoInstalaciones.jsp</result>
+            <result name="input">vistas/updateInstalaciones.jsp</result>
+        </action>
+    </package>
+    
+    <package name="partidos" extends="struts-default">
+        <action name="deletePartidos" class="acciones.borrarPartidos">
+            <result name="success">vistas/listadoPartidos.jsp</result>
         </action>
     </package>
 </struts>
