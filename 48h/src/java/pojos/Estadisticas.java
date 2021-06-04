@@ -1,5 +1,5 @@
 package pojos;
-// Generated 02-jun-2021 17:56:08 by Hibernate Tools 4.3.1
+// Generated 04-jun-2021 20:24:08 by Hibernate Tools 4.3.1
 
 
 
@@ -11,16 +11,16 @@ public class Estadisticas  implements java.io.Serializable {
 
      private Integer id;
      private Partidos partidos;
-     private int golesTot;
-     private int tirosPuerta;
-     private int amarillas;
-     private int rojas;
-     private int azules;
+     private String golesTot;
+     private String tirosPuerta;
+     private String amarillas;
+     private String rojas;
+     private String azules;
 
     public Estadisticas() {
     }
 
-    public Estadisticas(Partidos partidos, int golesTot, int tirosPuerta, int amarillas, int rojas, int azules) {
+    public Estadisticas(Partidos partidos, String golesTot, String tirosPuerta, String amarillas, String rojas, String azules) {
        this.partidos = partidos;
        this.golesTot = golesTot;
        this.tirosPuerta = tirosPuerta;
@@ -43,39 +43,39 @@ public class Estadisticas  implements java.io.Serializable {
     public void setPartidos(Partidos partidos) {
         this.partidos = partidos;
     }
-    public int getGolesTot() {
+    public String getGolesTot() {
         return this.golesTot;
     }
     
-    public void setGolesTot(int golesTot) {
+    public void setGolesTot(String golesTot) {
         this.golesTot = golesTot;
     }
-    public int getTirosPuerta() {
+    public String getTirosPuerta() {
         return this.tirosPuerta;
     }
     
-    public void setTirosPuerta(int tirosPuerta) {
+    public void setTirosPuerta(String tirosPuerta) {
         this.tirosPuerta = tirosPuerta;
     }
-    public int getAmarillas() {
+    public String getAmarillas() {
         return this.amarillas;
     }
     
-    public void setAmarillas(int amarillas) {
+    public void setAmarillas(String amarillas) {
         this.amarillas = amarillas;
     }
-    public int getRojas() {
+    public String getRojas() {
         return this.rojas;
     }
     
-    public void setRojas(int rojas) {
+    public void setRojas(String rojas) {
         this.rojas = rojas;
     }
-    public int getAzules() {
+    public String getAzules() {
         return this.azules;
     }
     
-    public void setAzules(int azules) {
+    public void setAzules(String azules) {
         this.azules = azules;
     }
 

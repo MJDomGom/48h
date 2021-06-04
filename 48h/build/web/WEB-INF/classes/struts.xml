@@ -90,9 +90,11 @@
         <action name="deletePartidos" class="acciones.borrarPartidos">
             <result name="success">vistas/listadoPartidos.jsp</result>
         </action>
+        
         <action name="addPartido" class="acciones.addPartido">
             <result name="success">vistas/listadoPartidos.jsp</result>
         </action>
+        
         <action name="addPartidosRedirect" >
             <result>vistas/addPartido.jsp</result>
         </action>
@@ -138,5 +140,27 @@
             <result name="success">vistas/listadoIntegrantes.jsp</result>
             <result name="input">vistas/updateIntegrante.jsp</result>
         </action>
+    </package>
+    
+    <package name="estadisticas" extends="struts-default">
+        
+        <action name="redirectEstadisticas" class="acciones.cargarEstadisticas">
+            <result>vistas/listadoEstadisticas.jsp</result>
+        </action>
+        
+        <action name="deleteEstadisticas" class="acciones.borrarEstadisticas">
+            <result name="success">vistas/listadoEstadisticas.jsp</result>
+        </action>
+        
+        <action name="addEstadisticasRedirect" class="acciones.redirectEstadisticas">
+            <result>vistas/addEstadisticas.jsp</result>
+        </action>
+        
+        <action name="addEstadistica" class="acciones.addEstadisticas">
+            <result name="success">vistas/listadoEstadisticas.jsp</result>
+            <result name="input">vistas/addEstadisticas.jsp</result>
+            <result name="error">vistas/addEstadisticas.jsp</result>
+        </action>
+        
     </package>
 </struts>

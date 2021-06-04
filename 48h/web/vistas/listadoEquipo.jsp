@@ -12,6 +12,21 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <table>
+            <th>               <s:form action="redirectInstalaciones">
+                    <s:submit name="instalaciones" value="Instalaciones"></s:submit>
+                </s:form>
+            </th>
+            <th>             <s:form action="redirectUsuario">
+                    <s:submit name="usuarios" value="Usuarios"></s:submit>
+                </s:form>
+            <th><s:form action="cargarEquipos">
+                    <s:submit value="Equipos"></s:submit>
+                </s:form></th>
+            <th><s:form action="cargarIntegrantes">
+                    <s:submit value="Integrantes"></s:submit>
+                </s:form></th>
+        </table>
         <h1>Listado Equipos</h1>   
         <table border="1">
             <thead>

@@ -1,5 +1,5 @@
 package pojos;
-// Generated 02-jun-2021 17:56:08 by Hibernate Tools 4.3.1
+// Generated 04-jun-2021 20:24:08 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -68,10 +68,8 @@ public class Instalaciones  implements java.io.Serializable {
     public void setJuegans(Set juegans) {
         this.juegans = juegans;
     }
-    public String toString(){
-        return this.nombre;
-    }
-    
+
+
 
 
 }

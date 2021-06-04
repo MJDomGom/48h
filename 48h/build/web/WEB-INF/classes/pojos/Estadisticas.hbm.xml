@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-jun-2021 17:56:08 by Hibernate Tools 4.3.1 -->
+<!-- Generated 04-jun-2021 20:24:09 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="pojos.Estadisticas" table="estadisticas" catalog="48h" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
@@ -11,20 +11,20 @@
         <many-to-one name="partidos" class="pojos.Partidos" fetch="select">
             <column name="idPartido" not-null="true" />
         </many-to-one>
-        <property name="golesTot" type="int">
-            <column name="golesTot" not-null="true" />
+        <property name="golesTot" type="string">
+            <column name="golesTot" length="11" not-null="true" />
         </property>
-        <property name="tirosPuerta" type="int">
-            <column name="tirosPuerta" not-null="true" />
+        <property name="tirosPuerta" type="string">
+            <column name="tirosPuerta" length="11" not-null="true" />
         </property>
-        <property name="amarillas" type="int">
-            <column name="amarillas" not-null="true" />
+        <property name="amarillas" type="string">
+            <column name="amarillas" length="11" not-null="true" />
         </property>
-        <property name="rojas" type="int">
-            <column name="rojas" not-null="true" />
+        <property name="rojas" type="string">
+            <column name="rojas" length="11" not-null="true" />
         </property>
-        <property name="azules" type="int">
-            <column name="azules" not-null="true" />
+        <property name="azules" type="string">
+            <column name="azules" length="11" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-06-2021 a las 19:01:29
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Tiempo de generación: 04-06-2021 a las 20:09:59
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,9 +37,9 @@ CREATE TABLE `equipo` (
 --
 
 INSERT INTO `equipo` (`nombre`, `nomCorto`) VALUES
-('Amarillo', 'AM'),
+('Amarillo', 'Am'),
 ('Azul', 'Az'),
-('Rojo', 'Rj0');
+('Rojo', 'Rj');
 
 -- --------------------------------------------------------
 
@@ -49,13 +49,20 @@ INSERT INTO `equipo` (`nombre`, `nomCorto`) VALUES
 
 CREATE TABLE `estadisticas` (
   `id` int(11) NOT NULL,
-  `golesTot` int(11) NOT NULL,
-  `tirosPuerta` int(11) NOT NULL,
-  `amarillas` int(11) NOT NULL,
-  `rojas` int(11) NOT NULL,
-  `azules` int(11) NOT NULL,
+  `golesTot` varchar(11) NOT NULL,
+  `tirosPuerta` varchar(11) NOT NULL,
+  `amarillas` varchar(11) NOT NULL,
+  `rojas` varchar(11) NOT NULL,
+  `azules` varchar(11) NOT NULL,
   `idPartido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `estadisticas`
+--
+
+INSERT INTO `estadisticas` (`id`, `golesTot`, `tirosPuerta`, `amarillas`, `rojas`, `azules`, `idPartido`) VALUES
+(5, '1-2', '13-13', '0-0', '0-0', '0-0', 1);
 
 -- --------------------------------------------------------
 
@@ -75,7 +82,7 @@ CREATE TABLE `instalaciones` (
 --
 
 INSERT INTO `instalaciones` (`id`, `nombre`, `direccion`, `capacidad`) VALUES
-(1, 'Pabellon 13', 'Calle Falsa 16', 12),
+(1, 'Pabellon 1', 'Calle Falsa 16', 12),
 (6, 'Pabellon 2', 'Direccion Pabellon 2', 100);
 
 -- --------------------------------------------------------
@@ -91,14 +98,6 @@ CREATE TABLE `integrante` (
   `dorsal` int(11) NOT NULL,
   `nombreEquipo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `integrante`
---
-
-INSERT INTO `integrante` (`dni`, `nombre`, `apellidos`, `dorsal`, `nombreEquipo`) VALUES
-('288486868Q', 'Frede', 'Gonzalezzzz', 17, 'Amarillo'),
-('42347624X', 'Manu', 'Manue', 4, 'Rojo');
 
 -- --------------------------------------------------------
 
@@ -157,8 +156,7 @@ CREATE TABLE `partidos` (
 --
 
 INSERT INTO `partidos` (`Local`, `Visitante`, `idPartido`, `resultado`, `fecha`) VALUES
-('Azul', 'Rojo', 1, '3-2', '2021-06-02 13:08:08'),
-('Azul', 'Amarillo', 4, '2-3', '2021-06-04 12:24:27');
+('Azul', 'Rojo', 1, '3-2', '2021-06-02 13:08:08');
 
 -- --------------------------------------------------------
 
@@ -179,7 +177,9 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`nick`, `nombre`, `password`, `rol`) VALUES
 ('Fede', 'Federico', 'Fede1234', 'Cliente'),
-('Manu', 'Manuel Jesus', 'Manu1234', 'Gerente');
+('Manu', 'Manuel Jesus', 'Manu1234', 'Gerente'),
+('Mari', 'Maria', 'Maria1234', 'Cliente'),
+('Pepe', 'Jose', 'Pepe1234', 'Cliente');
 
 --
 -- Índices para tablas volcadas
@@ -247,13 +247,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `estadisticas`
 --
 ALTER TABLE `estadisticas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `instalaciones`
 --
 ALTER TABLE `instalaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `jugados`
@@ -265,7 +265,7 @@ ALTER TABLE `jugados`
 -- AUTO_INCREMENT de la tabla `partidos`
 --
 ALTER TABLE `partidos`
-  MODIFY `idPartido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idPartido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

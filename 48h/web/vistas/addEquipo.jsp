@@ -10,17 +10,18 @@
     <head>
         <title>Añadir Equipo - 48h</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+
         <%-- FAVICON --%>
         <link rel="icon" type="image/ico" href="${pageContext.request.contextPath}/vistas/assets/img/favicon.ico">
-        
+
     </head>
     <body>
         <h1>Añadir Equipo</h1>
-        <s:form action="addEquipo">
-            <s:textfield name="nombre" label="Nombre de equipo"></s:textfield>
-            <s:textfield name="nomCorto" label="Nombre Corto"></s:textfield>
-            <s:submit value="Guardar Equipo"></s:submit>
-        </s:form>
-    </body>
+    <s:form action="addEquipo">
+        <s:textfield name="nombre" label="Nombre de equipo"></s:textfield>
+        <s:textfield name="nomCorto" label="Nombre Corto"></s:textfield>
+        <s:submit value="Guardar Equipo"></s:submit>
+    </s:form>
+</body>
 </html>
+
