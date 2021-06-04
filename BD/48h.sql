@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2021 a las 19:05:08
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 7.3.27
+-- Tiempo de generación: 04-06-2021 a las 19:01:29
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,8 +37,9 @@ CREATE TABLE `equipo` (
 --
 
 INSERT INTO `equipo` (`nombre`, `nomCorto`) VALUES
+('Amarillo', 'AM'),
 ('Azul', 'Az'),
-('Rojo', 'Rj');
+('Rojo', 'Rj0');
 
 -- --------------------------------------------------------
 
@@ -91,6 +92,14 @@ CREATE TABLE `integrante` (
   `nombreEquipo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `integrante`
+--
+
+INSERT INTO `integrante` (`dni`, `nombre`, `apellidos`, `dorsal`, `nombreEquipo`) VALUES
+('288486868Q', 'Frede', 'Gonzalezzzz', 17, 'Amarillo'),
+('42347624X', 'Manu', 'Manue', 4, 'Rojo');
+
 -- --------------------------------------------------------
 
 --
@@ -101,6 +110,13 @@ CREATE TABLE `juegan` (
   `idPartido` int(11) NOT NULL,
   `idInstalacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `juegan`
+--
+
+INSERT INTO `juegan` (`idPartido`, `idInstalacion`) VALUES
+(1, 1);
 
 -- --------------------------------------------------------
 
@@ -141,7 +157,8 @@ CREATE TABLE `partidos` (
 --
 
 INSERT INTO `partidos` (`Local`, `Visitante`, `idPartido`, `resultado`, `fecha`) VALUES
-('Azul', 'Rojo', 1, '3-2', '2021-06-02 13:08:08');
+('Azul', 'Rojo', 1, '3-2', '2021-06-02 13:08:08'),
+('Azul', 'Amarillo', 4, '2-3', '2021-06-04 12:24:27');
 
 -- --------------------------------------------------------
 
@@ -248,7 +265,7 @@ ALTER TABLE `jugados`
 -- AUTO_INCREMENT de la tabla `partidos`
 --
 ALTER TABLE `partidos`
-  MODIFY `idPartido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idPartido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas

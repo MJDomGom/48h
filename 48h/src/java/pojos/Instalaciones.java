@@ -68,8 +68,10 @@ public class Instalaciones  implements java.io.Serializable {
     public void setJuegans(Set juegans) {
         this.juegans = juegans;
     }
-
-
+    public String toString(){
+        return this.nombre;
+    }
+    
 
 
 }

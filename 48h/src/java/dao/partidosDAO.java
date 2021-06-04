@@ -36,7 +36,12 @@ public class partidosDAO {
         tx.commit();
         return listaPartidos;
     }
-
+    public void addPartido(Partidos p){
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        session.save(p);
+        tx.commit();
+    }
     public void deletePartidos(int oculto) {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();

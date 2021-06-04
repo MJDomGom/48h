@@ -17,10 +17,10 @@ import pojos.Instalaciones;
  * @author mjdom
  */
 public class instalacionesDAO {
-
+    
     Session session = null;
     public List<Instalaciones> listaInstalaciones;
-
+ 
     public List<Instalaciones> listadoInstalaciones() {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();

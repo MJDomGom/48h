@@ -61,6 +61,20 @@
         <s:form action="addPartidosRedirect">
             <s:submit name="add" value="Añadir Partidos"></s:submit>
         </s:form>
+
+        <s:form action="redirectInstalaciones">
+            <s:submit name="instalaciones" value="Instalaciones"></s:submit>
+        </s:form>
+        <s:form action="redirectUsuario">
+            <s:submit name="usuarios" value="Usuarios"></s:submit>
+        </s:form>
+        <s:form action="cargarEquipos">
+            <s:submit value="Equipos"></s:submit>
+        </s:form>
+        <s:form action="cargarIntegrantes">
+            <s:submit value="Integrantes"></s:submit>
+        </s:form>
+    </body>
     </s:if>
 </body>
 </html>

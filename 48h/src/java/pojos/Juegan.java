@@ -43,7 +43,10 @@ public class Juegan  implements java.io.Serializable {
     public void setPartidos(Partidos partidos) {
         this.partidos = partidos;
     }
-
+     @Override
+    public String toString(){
+        return this.getInstalaciones().getNombre();
+    }
 
 
 

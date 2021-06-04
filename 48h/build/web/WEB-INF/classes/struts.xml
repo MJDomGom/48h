@@ -90,5 +90,53 @@
         <action name="deletePartidos" class="acciones.borrarPartidos">
             <result name="success">vistas/listadoPartidos.jsp</result>
         </action>
+        <action name="addPartido" class="acciones.addPartido">
+            <result name="success">vistas/listadoPartidos.jsp</result>
+        </action>
+        <action name="addPartidosRedirect" >
+            <result>vistas/addPartido.jsp</result>
+        </action>
+    </package>
+    <package name="equipos" extends="struts-default">
+        <action name="cargarEquipos" class="acciones.cargarEquipos">
+            <result name="success">vistas/listadoEquipo.jsp</result>
+        </action>
+        <action name="updateEquiposRedirect" class="acciones.updateEquiposRedirect">
+            <result>vistas/updateEquipo.jsp</result>
+        </action>
+        <action name="updateEquipo" class="acciones.updateEquipo">
+            <result>vistas/listadoEquipo.jsp</result>
+        </action>
+        <action name="deleteEquipos" class="acciones.deleteEquipos">
+            <result name="success">vistas/listadoEquipo.jsp</result>
+        </action>
+        <action name="addEquipo" class="acciones.addEquipo">
+            <result name="success">vistas/listadoEquipo.jsp</result>
+            <result name="input">vistas/addEquipo.jsp</result>
+        </action>
+        <action name="addEquipoRedirect">
+            <result>vistas/addEquipo.jsp</result>
+        </action>
+    </package>
+    <package name="integrantes" extends="struts-default">
+        <action name="addIntegranteRedirect" class="acciones.addIntegranteRedirect">
+            <result name="success">vistas/addIntegrante.jsp</result>
+        </action>
+        <action name="addIntegrante" class="acciones.addIntegrante">
+            <result name="success">vistas/listadoIntegrantes.jsp</result>
+        </action>
+        <action name="cargarIntegrantes" class="acciones.cargarIntegrantes">
+            <result name="success" >vistas/listadoIntegrantes.jsp</result>
+        </action>
+        <action name="deleteIntegrante"  class="acciones.deleteIntegrante">
+            <result name="success">vistas/listadoIntegrantes.jsp</result>
+        </action>
+        <action name="updateIntegranteRedirect" class="acciones.updateIntegranteRedirect">
+            <result name="success">vistas/updateIntegrante.jsp</result>
+        </action>
+        <action name="updateIntegrante" class="acciones.updateIntegrante">
+            <result name="success">vistas/listadoIntegrantes.jsp</result>
+            <result name="input">vistas/updateIntegrante.jsp</result>
+        </action>
     </package>
 </struts>
