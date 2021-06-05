@@ -49,13 +49,13 @@ Contributor(s):
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
     <property name="hbm2ddl.auto">update</property>
-    <mapping resource="pojos/Usuario.hbm.xml"/>
-    <mapping resource="pojos/Estadisticas.hbm.xml"/>
-    <mapping resource="pojos/Juegan.hbm.xml"/>
     <mapping resource="pojos/Instalaciones.hbm.xml"/>
-    <mapping resource="pojos/Jugados.hbm.xml"/>
-    <mapping resource="pojos/Integrante.hbm.xml"/>
+    <mapping resource="pojos/Estadisticas.hbm.xml"/>
     <mapping resource="pojos/Partidos.hbm.xml"/>
     <mapping resource="pojos/Equipo.hbm.xml"/>
+    <mapping resource="pojos/Jugados.hbm.xml"/>
+    <mapping resource="pojos/Usuario.hbm.xml"/>
+    <mapping resource="pojos/Integrante.hbm.xml"/>
+    <mapping resource="pojos/Juegan.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

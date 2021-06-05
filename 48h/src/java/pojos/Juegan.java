@@ -1,5 +1,5 @@
 package pojos;
-// Generated 02-jun-2021 17:56:08 by Hibernate Tools 4.3.1
+// Generated 04-jun-2021 20:24:08 by Hibernate Tools 4.3.1
 
 
 
@@ -43,10 +43,7 @@ public class Juegan  implements java.io.Serializable {
     public void setPartidos(Partidos partidos) {
         this.partidos = partidos;
     }
-     @Override
-    public String toString(){
-        return this.getInstalaciones().getNombre();
-    }
+
 
 
 
