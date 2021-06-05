@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-06-2021 a las 20:09:59
+-- Tiempo de generación: 05-06-2021 a las 15:24:11
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -74,16 +74,19 @@ CREATE TABLE `instalaciones` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `direccion` varchar(100) NOT NULL,
-  `capacidad` int(11) NOT NULL
+  `capacidad` int(11) NOT NULL,
+  `ciudad` varchar(100) NOT NULL,
+  `longitud` varchar(255) NOT NULL,
+  `latitud` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `instalaciones`
 --
 
-INSERT INTO `instalaciones` (`id`, `nombre`, `direccion`, `capacidad`) VALUES
-(1, 'Pabellon 1', 'Calle Falsa 16', 12),
-(6, 'Pabellon 2', 'Direccion Pabellon 2', 100);
+INSERT INTO `instalaciones` (`id`, `nombre`, `direccion`, `capacidad`, `ciudad`, `longitud`, `latitud`) VALUES
+(1, 'Complejo Deportivo Municipal de Ramón y Cajal', 'Calle Tirso de Molina, 11', 12, 'Dos Hermanas', '5.9266562', '37.2937477'),
+(2, 'Complejo Deportivo Municipal Los Montecillos', 'Cl. Meñaca, 6', 100, 'Dos Hermanas', '-5.9192239', '37.2709913');
 
 -- --------------------------------------------------------
 
@@ -98,6 +101,15 @@ CREATE TABLE `integrante` (
   `dorsal` int(11) NOT NULL,
   `nombreEquipo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `integrante`
+--
+
+INSERT INTO `integrante` (`dni`, `nombre`, `apellidos`, `dorsal`, `nombreEquipo`) VALUES
+('47547326R', 'Manuel', 'Dominguez', 20, 'Azul'),
+('47547327R', 'Fede', 'Gonzalez', 77, 'Rojo'),
+('47547328R', 'Maria', 'Jimenez', 1, 'Amarillo');
 
 -- --------------------------------------------------------
 
