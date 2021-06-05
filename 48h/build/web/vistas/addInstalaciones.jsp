@@ -49,6 +49,9 @@
                                 <s:hidden name="latitud" id="latitud"></s:hidden>    
                                 <s:submit name = "btnAdd" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light" value="Añadir"></s:submit>
                             </s:form>
+                            <s:form action="cargarInstalaciones">
+                                <s:submit name = "btnCancelar" value="Cancelar" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light"></s:submit>
+                            </s:form>
                         </div>
                     </section>
                 </div>

@@ -46,6 +46,9 @@
                                 <div class="form-group"><s:textfield class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" name="password" placeholder="Contraseña"></s:textfield></div>
                                 <s:submit name = "btnAdd" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light" value="Registrar"></s:submit>
                             </s:form>
+                            <s:form action="cargarUsuarios">
+                                <s:submit name = "btnCancelar" value="Cancelar" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light"></s:submit>
+                            </s:form>
                         </div>
                     </section>
                 </div>

@@ -54,6 +54,9 @@
                                           class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"/></div>
                                     <s:submit value="Guardar Cambios" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light"></s:submit>
                                 </s:form>
+                                <s:form action="cargarIntegrantes">
+                                    <s:submit name = "btnCancelar" value="Cancelar"></s:submit>
+                                </s:form>
                         </div>
                     </section>
                 </div>

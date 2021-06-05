@@ -44,6 +44,9 @@
                                 <div class="form-group"><s:textfield class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" name="nombre" label="Nombre de equipo" placeholder="Nombre de equipo"></s:textfield></div>
                                 <div class="form-group"><s:textfield class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" name="nomCorto" label="Nombre Corto" placeholder="Nombre Corto"></s:textfield></div>
                                 <s:submit value="Guardar Equipo" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light"></s:submit>
+                            </s:form>   
+                            <s:form action="cargarEquipos">
+                                <s:submit name = "btnCancelar" value="Cancelar"></s:submit>
                             </s:form>
                         </div>
                     </section>

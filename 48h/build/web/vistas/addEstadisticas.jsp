@@ -48,7 +48,10 @@
                                 <div class="form-group"><s:textfield name="rojas" label="Rojas (L-V)" placeholder="Rojas (L-V)" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
                                 <div class="form-group"><s:textfield name="azules" label="Azules (L-V)" placeholder="Azules (L-V)"  class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
                                 <s:submit name = "btnAdd" value="Añadir" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light"></s:submit>
-                            </s:form>   
+                            </s:form>  
+                            <s:form action="cargarEstadisticas">
+                                <s:submit name = "btnCancelar" value="Cancelar" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light"></s:submit>
+                            </s:form>
                         </div>
                     </section>
                 </div>

@@ -50,6 +50,9 @@
                                 <s:hidden name="latUpd" id="latUpd" value="%{session.LatUpd}"></s:hidden>
                                 <s:submit name="btnupdate" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light" value="Modificar"></s:submit>
                             </s:form>
+                            <s:form action="cargarInstalaciones">
+                                <s:submit name = "btnCancelar" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light" value="Cancelar"></s:submit>
+                            </s:form>
                         </div>
                     </section>
                 </div>
