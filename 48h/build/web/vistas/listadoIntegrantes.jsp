@@ -56,6 +56,12 @@
                                 <s:submit cssClass="btn btn-primary text-dark bg-light border-dark" value="Integrantes"></s:submit>
                             </s:form>
                         </th>
+                        <th>/</th>
+                        <th>             
+                            <s:form action="redirectEstadisticas">
+                                <s:submit name="estadisticas" cssClass="btn btn-primary text-dark bg-light border-dark" value="Estadísticas"></s:submit>
+                            </s:form>
+                        </th>
                     </table>
                     <div class="block-heading text-center">
                         <h2 class="text-dark shadow">LISTADO DE INTEGRANTES</h2>
@@ -74,7 +80,11 @@
                                     <th class="shadow-sm" style="text-align: center;">Nombre</th>
                                     <th class="shadow-sm" style="text-align: center;">Apellidos</th>
                                     <th class="shadow-sm" style="text-align: center;">Dorsal</th>
-                                    <th class="shadow-sm" style="text-align: center;">Equipo</th>   
+                                    <th class="shadow-sm" style="text-align: center;">Equipo</th>  
+                                        <s:if test="%{#session.rol == 'Gerente'}">
+                                        <th class="shadow-sm" style="text-align: center;">Modificar</th>
+                                        <th class="shadow-sm" style="text-align: center;">Borrar</th>
+                                        </s:if>
                                 </tr>
                             </thead>
                             <tbody>

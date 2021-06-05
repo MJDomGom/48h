@@ -56,6 +56,12 @@
                                 <s:submit cssClass="btn btn-primary text-dark bg-light border-dark" value="Integrantes"></s:submit>
                             </s:form>
                         </th>
+                        <th>/</th>
+                        <th>             
+                            <s:form action="redirectEstadisticas">
+                                <s:submit name="estadisticas" cssClass="btn btn-primary text-dark bg-light border-dark" value="Estadísticas"></s:submit>
+                            </s:form>
+                        </th>
                     </table>
                     <div class="block-heading text-center">
                         <h2 class="text-dark shadow">LISTADO DE ESTADÍSTICAS</h2>

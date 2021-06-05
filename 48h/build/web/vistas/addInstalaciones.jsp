@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Alta Instalación - 48h</title>
+        <title>Añadir Instalación - 48h</title>
 
         <%-- FAVICON --%>
         <link rel="icon" type="image/ico" href="${pageContext.request.contextPath}/vistas/assets/img/favicon.ico">
@@ -33,7 +33,7 @@
             <section class="clean-block slider dark" style="background: rgb(246, 246, 246);">
                 <div class="container">
                     <div class="block-heading text-center">
-                        <h2 class="text-dark shadow">ALTA DE INSTALACIÓN</h2>
+                        <h2 class="text-dark shadow">AÑADIR INSTALACIÓN</h2>
                         <div style="margin-top: 25px; margin-bottom: 20px;">
                             <p>Introduce los datos para registrar una instalación:</p>
                         </div>
