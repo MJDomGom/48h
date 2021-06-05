@@ -21,6 +21,9 @@ public class updateInstalacion extends ActionSupport {
     
     private String nombreUpd;
     private String dirUpd;
+    private String ciuUpd;
+    private String lonUpd;
+    private String latUpd;
     private int capUpd;
     private int idUpd;
     private Map session;
@@ -30,7 +33,7 @@ public class updateInstalacion extends ActionSupport {
     }
     
     public String execute() throws Exception {
-        Instalaciones upd = new Instalaciones(this.getNombreUpd(), this.getDirUpd(), this.getCapUpd());
+        Instalaciones upd = new Instalaciones(this.getNombreUpd(), this.getDirUpd(), this.getCiuUpd(), this.getLonUpd(), this.getLatUpd(), this.getCapUpd());
         upd.setId(this.getIdUpd());
         listaInstalaciones = new instalacionesDAO().updateInstalaciones(upd);
         return SUCCESS;
@@ -52,6 +55,31 @@ public class updateInstalacion extends ActionSupport {
     @RequiredStringValidator(message = "Debe de insertar una direccion de la instalacion")
     public void setDirUpd(String dirUpd) {
         this.dirUpd = dirUpd;
+    }
+
+    public String getCiuUpd() {
+        return ciuUpd;
+    }
+
+    @RequiredStringValidator(message = "Debe de insertar una ciudad de la instalacion")
+    public void setCiuUpd(String ciuUpd) {
+        this.ciuUpd = ciuUpd;
+    }
+
+    public String getLonUpd() {
+        return lonUpd;
+    }
+
+    public void setLonUpd(String lonUpd) {
+        this.lonUpd = lonUpd;
+    }
+
+    public String getLatUpd() {
+        return latUpd;
+    }
+
+    public void setLatUpd(String latUpd) {
+        this.latUpd = latUpd;
     }
     
     public int getCapUpd() {

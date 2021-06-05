@@ -131,7 +131,7 @@
                     </div>
             </section>
         </main>
-        <footer class="page-footer dark  navbar-light navbar-expand-lg fixed bg-dark " style="background: #888888; border-color: gray; text-align: center; padding-top: 15px; padding-bottom: 10px;">
+        <footer class="page-footer dark  navbar-light navbar-expand-lg fixed-bottom bg-dark " style="background: #888888; border-color: gray; text-align: center; padding-top: 15px; padding-bottom: 10px;">
             <div class="footer-copyright" style="color: white;">
                 <p>© 2021 Torneo 48h.</p>
             </div>

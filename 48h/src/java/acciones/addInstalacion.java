@@ -20,6 +20,9 @@ public class addInstalacion extends ActionSupport {
 
     private String nombre;
     private String direccion;
+    private String ciudad;
+    private String longitud;
+    private String latitud;
     private int capacidad;
     private List<Instalaciones> listaInstalaciones;
 
@@ -27,7 +30,7 @@ public class addInstalacion extends ActionSupport {
     }
 
     public String execute() throws Exception {
-        new instalacionesDAO().addInstalacion(this.getNombre(), this.getDireccion(), this.getCapacidad());
+        new instalacionesDAO().addInstalacion(this.getNombre(), this.getDireccion(), this.getCiudad(), this.getLongitud(), this.getLatitud(), this.getCapacidad());
         listaInstalaciones = new instalacionesDAO().listadoInstalaciones();
         return SUCCESS;
     }
@@ -54,6 +57,30 @@ public class addInstalacion extends ActionSupport {
         return capacidad;
     }
 
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
+
+    public String getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+    
     @RequiredFieldValidator(message = "Debe insertar una capacidad de la instalacion")
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;

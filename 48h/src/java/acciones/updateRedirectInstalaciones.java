@@ -29,6 +29,9 @@ public class updateRedirectInstalaciones extends ActionSupport {
         session = (Map) ActionContext.getContext().getSession();
         session.put("NombreUpd", upd.getNombre());
         session.put("DirUpd", upd.getDireccion());
+        session.put("CiuUpd", upd.getCiudad());
+        session.put("LonUpd", upd.getLongitud());
+        session.put("LatUpd", upd.getLatitud());
         session.put("CapUpd", upd.getCapacidad());
         session.put("IdUpd", this.getOculto());
         return SUCCESS;

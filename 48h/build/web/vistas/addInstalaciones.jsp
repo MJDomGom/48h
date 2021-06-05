@@ -41,12 +41,15 @@
                     <section class="text-light d-inline-block float-none d-lg-flex justify-content-lg-center" style="background: rgb(246,246,246); margin-top: 30px; padding-right: 70px;">
                         <div class="form-container">
                             <s:form action="addInstalacion">
-                                <div class="form-group"><s:textfield name="nombre" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" label="Nombre" value="Nombre"></s:textfield></div>
-                                <div class="form-group"><s:textfield name="direccion" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" label="Direccion" value="Dirección"></s:textfield></div>
-                                <div class="form-group"><s:textfield name="capacidad" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" type="number" min="0" label="Capacidad" value="Capacidad"></s:textfield></div>
-                                    <s:submit name = "btnAdd" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light" value="Añadir"></s:submit>
-                                </s:form>
-                            </div>
+                                <div class="form-group"><s:textfield name="nombre" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" label="Nombre" placeholder="Nombre"></s:textfield></div>
+                                <div class="form-group"><s:textfield name="direccion" id="direccion" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" label="Direccion" placeholder="Dirección"></s:textfield></div>
+                                <div class="form-group"><s:textfield name="ciudad" id="ciudad" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" label="Ciudad" placeholder="Ciudad"></s:textfield></div>
+                                <div class="form-group"><s:textfield name="capacidad" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" type="number" min="0" label="Capacidad" placeholder="Capacidad"></s:textfield></div>
+                                <s:hidden name="longitud" id="longitud"></s:hidden>
+                                <s:hidden name="latitud" id="latitud"></s:hidden>    
+                                <s:submit name = "btnAdd" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light" value="Añadir"></s:submit>
+                            </s:form>
+                        </div>
                     </section>
                 </div>
             </section>
@@ -62,5 +65,30 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
         <script src="vistas/assets/js/smoothproducts.min.js"></script>
         <script src="vistas/assets/js/theme.js"></script>
+
+        <%-- API GOOGLE MAPS --%>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $("#direccion").on("change", geolocate);
+                $("#ciudad").on("change", geolocate);
+            });
+
+            function geolocate() {
+                var ciudad = $("#ciudad").val();
+                var direccion = $("#direccion").val();
+                $.ajax({
+                    type: "get",
+                    url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccion + "+" + ciudad + "&key=AIzaSyBX1Qy2dFMigK3r7pwgCBFC90exmctPt6g",
+                    datatype: "application/json; charset=utf-8",
+                    success: function (localizacion) {
+                        console.log(localizacion);
+
+                        $("#latitud").val(localizacion.results[0].geometry.location.lat);
+                        $("#longitud").val(localizacion.results[0].geometry.location.lng);
+                    }
+                });
+            }
+        </script>
     </body>
 </html>

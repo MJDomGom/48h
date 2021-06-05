@@ -40,10 +40,10 @@ public class instalacionesDAO {
         tx.commit();
     }
 
-    public void addInstalacion(String nombre, String direccion, int capacidad) {
+    public void addInstalacion(String nombre, String direccion, String ciudad, String longitud, String latitud, int capacidad) {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
-        Instalaciones inst = new Instalaciones(nombre, direccion, capacidad);
+        Instalaciones inst = new Instalaciones(nombre, direccion, ciudad, longitud, latitud, capacidad);
         session.save(inst);
         tx.commit();
     }

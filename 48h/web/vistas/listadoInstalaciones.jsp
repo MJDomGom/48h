@@ -56,6 +56,7 @@
                                 <tr>
                                     <th class="shadow-sm" style="text-align: center;">Nombre</th>
                                     <th class="shadow-sm" style="text-align: center;">Dirección</th>
+                                    <th class="shadow-sm" style="text-align: center;">Ciudad</th>
                                     <th class="shadow-sm" style="text-align: center;">Capacidad</th>
                                         <s:if test="%{#session.rol == 'Gerente'}">
                                         <th class="shadow-sm" style="text-align: center;">Modificar</th>
@@ -68,7 +69,11 @@
                                     <tr>
                                         <td class="text-center"><s:property value="%{nombre}"/></td>
                                         <td class="text-center"><s:property value="%{direccion}"/></td>
+                                        <td class="text-center"><s:property value="%{ciudad}"/></td>
                                         <td class="text-center"><s:property value="%{capacidad}"/></td>
+                                        <s:hidden name="longitud" value="%{longitud}" placeholder="longitud de la instalacion"></s:hidden>
+                                        <s:hidden name="latitud" value="%{latitud}" placeholder="latitud de la instalacion"></s:hidden>
+                                        <s:hidden name="direccion" value="%{direccion}"></s:hidden>
                                         <s:if test="%{#session.rol == 'Gerente'}">
                                             <td style="width: 33px; margin: 0 auto;">
                                                 <s:form action="updateInstalacionesRedirect">
@@ -90,6 +95,14 @@
                     </div>
                 </div>
             </section>
+            <section class="clean-block slider light ">
+                <div class="container">
+                    <div class="block-heading text-center">
+                        <div id="mapaInstalaciones" style="height: 400px; margin-top: 25px;"></div>
+                    </div>
+                </div>
+            </section>
+            <br/><br/><br/><br/><br/>
         </main>
         <footer class="page-footer dark  navbar-light navbar-expand-lg fixed-bottom bg-dark " style="background: #888888; border-color: gray; text-align: center; padding-top: 15px;">
             <div class="footer-copyright" style="color: white;">
@@ -102,5 +115,51 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
         <script src="vistas/assets/js/smoothproducts.min.js"></script>
         <script src="vistas/assets/js/theme.js"></script>
+
+        <%-- API GOOGLE MAPS --%>
+        <script type="text/javascript">
+
+
+            function initMap() {
+                var latitudes = $("[name='latitud']");
+                var longitudes = $("[name='longitud']");
+                var direcciones = $("[name='direccion']");
+
+                var center = {lat: 37.2832, lng: -5.92224};
+                var map = new google.maps.Map(document.getElementById('mapaInstalaciones'), {
+                    zoom: 20,
+                    center: center
+                });
+
+                var marker, i;
+
+                var limites = new google.maps.LatLngBounds();
+
+                for (var i = 0; i < latitudes.length; i++) {
+
+                    var long = longitudes[i].value;
+                    var lat = latitudes[i].value;
+                    var dir = direcciones[i].value;
+
+                    var position = new google.maps.LatLng(lat, long);
+                    marker = new google.maps.Marker({
+                        position: position,
+                        map: map,
+                        title: dir
+                    });
+
+                    marker.setMap(map);
+
+                    limites.extend(marker.position);
+
+                    map.fitBounds(limites);
+
+
+
+                }
+            }
+
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX1Qy2dFMigK3r7pwgCBFC90exmctPt6g&callback=initMap" type="text/javascript"></script>
     </body>
 </html>

@@ -42,9 +42,12 @@
                         <div class="form-container">
                             <s:form action="updateInstalacion">
                                 <div class="form-group"><s:textfield name="nombreUpd" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" label="Nombre" value="%{session.NombreUpd}"></s:textfield></div>
-                                <div class="form-group"><s:textfield name="dirUpd" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" label="Direccion" value="%{session.DirUpd}"></s:textfield></div>
+                                <div class="form-group"><s:textfield name="dirUpd" id="dirUpd" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" label="Direccion" value="%{session.DirUpd}"></s:textfield></div>
+                                <div class="form-group"><s:textfield name="ciuUpd" id="ciuUpd" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" label="Ciudad" value="%{session.CiuUpd}"></s:textfield></div>
                                 <div class="form-group"><s:textfield name="capUpd" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;" label = "Capacidad" type="number" min="0" value="%{session.CapUpd}"></s:textfield></div>
                                 <s:hidden name="idUpd" value="%{session.IdUpd}"></s:hidden>
+                                <s:hidden name="lonUpd" id="lonUpd" value="%{session.LonUpd}"></s:hidden>
+                                <s:hidden name="latUpd" id="latUpd" value="%{session.LatUpd}"></s:hidden>
                                 <s:submit name="btnupdate" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light" value="Modificar"></s:submit>
                             </s:form>
                         </div>
@@ -63,5 +66,30 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
         <script src="vistas/assets/js/smoothproducts.min.js"></script>
         <script src="vistas/assets/js/theme.js"></script>
+
+        <%-- API GOOGLE MAPS --%>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $("#dirUpd").on("change", geolocate);
+                $("#ciuUpd").on("change", geolocate);
+            });
+
+            function geolocate() {
+                var ciudad = $("#ciuUpd").val();
+                var direccion = $("#dirUpd").val();
+                $.ajax({
+                    type: "get",
+                    url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccion + "+" + ciudad + "&key=AIzaSyBX1Qy2dFMigK3r7pwgCBFC90exmctPt6g",
+                    datatype: "application/json; charset=utf-8",
+                    success: function (localizacion) {
+                        console.log(localizacion);
+
+                        $("#latUpd").val(localizacion.results[0].geometry.location.lat);
+                        $("#lonUpd").val(localizacion.results[0].geometry.location.lng);
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
