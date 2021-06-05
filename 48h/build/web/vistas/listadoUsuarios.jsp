@@ -32,14 +32,8 @@
         <main class="page landing-page">
             <section class="clean-block slider dark">
                 <div class="container">
-                    <div class="block-heading text-center">
-                        <h2 class="text-dark shadow">LISTADO DE USUARIOS</h2>
-                        <div style="margin-top: 25px; margin-bottom: 20px;">
-                            <p>Usuarios registrados en el sistema:</p>
-                        </div>
-                    </div>
-                    <table style="margin-top: 10px; margin-bottom: 15px">
-                        <th>               
+                    <table style="margin-top: 10px; margin-bottom: 15px; padding-right: 30px">
+                        <th>             
                             <s:form action="redirectInstalaciones">
                                 <s:submit name="instalaciones" cssClass="btn btn-primary text-dark bg-light border-dark" value="Instalaciones"></s:submit>
                             </s:form>
@@ -50,8 +44,25 @@
                                 <s:submit name="usuarios" cssClass="btn btn-primary text-dark bg-light border-dark" value="Usuarios"></s:submit>
                             </s:form>
                         </th>
+                        <th>/</th>
+                        <th>             
+                            <s:form action="cargarEquipos">
+                                <s:submit cssClass="btn btn-primary text-dark bg-light border-dark" value="Equipos"></s:submit>
+                            </s:form>
+                        </th>
+                        <th>/</th>
+                        <th>             
+                            <s:form action="cargarIntegrantes">
+                                <s:submit cssClass="btn btn-primary text-dark bg-light border-dark" value="Integrantes"></s:submit>
+                            </s:form>
+                        </th>
                     </table>
-
+                    <div class="block-heading text-center">
+                        <h2 class="text-dark shadow">LISTADO DE USUARIOS</h2>
+                        <div style="margin-top: 25px; margin-bottom: 20px;">
+                            <p>Usuarios registrados en el sistema:</p>
+                        </div>
+                    </div>
                     <s:if test="%{#session.rol == 'Gerente'}">
                         <s:form action="addUsuarioRedirect">
                             <s:submit name="add" cssClass="btn btn-primary text-light bg-dark border-light" value="Añadir"></s:submit>
