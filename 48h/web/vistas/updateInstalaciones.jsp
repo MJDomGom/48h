@@ -35,7 +35,7 @@
                     <div class="block-heading text-center">
                         <h2 class="text-dark shadow">MODIFICAR INSTALACIÓN</h2>
                         <div style="margin-top: 25px; margin-bottom: 20px;">
-                            <p>Actualiza los datos de esta instalación</p>
+                            <p>Actualiza los datos de esta instalación:</p>
                         </div>
                     </div>
                     <section class="text-light d-inline-block float-none d-lg-flex justify-content-lg-center" style="background: rgb(246,246,246); margin-top: 30px; padding-right: 100px;">

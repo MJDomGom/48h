@@ -1,8 +1,3 @@
-<%-- 
-    Document   : updatePartido
-    Created on : 03-may-2021, 18:26:00
-    Author     : fedev
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
