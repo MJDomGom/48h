@@ -6,6 +6,7 @@
 package acciones;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import dao.usuarioDAO;
 import java.util.List;
 import pojos.Usuario;
@@ -26,7 +27,7 @@ public class updateUsuario extends ActionSupport {
     }
 
     public String execute() throws Exception {
-        Usuario upd = new Usuario(this.getNickUpd(),this.getNombreUpd(),this.getPassUpd(),this.getRolUpd());
+        Usuario upd = new Usuario(this.getNickUpd(), this.getNombreUpd(), this.getPassUpd(), this.getRolUpd());
         listaUsuarios = new usuarioDAO().updateUsuario(upd);
         return SUCCESS;
     }
@@ -43,6 +44,7 @@ public class updateUsuario extends ActionSupport {
         return nombreUpd;
     }
 
+    @RequiredStringValidator(message = "Debe de insertar un nombre de usuario")
     public void setNombreUpd(String nombreUpd) {
         this.nombreUpd = nombreUpd;
     }
@@ -51,6 +53,7 @@ public class updateUsuario extends ActionSupport {
         return passUpd;
     }
 
+    @RequiredStringValidator(message = "Debe de insertar una contraseña")
     public void setPassUpd(String passUpd) {
         this.passUpd = passUpd;
     }
@@ -67,9 +70,9 @@ public class updateUsuario extends ActionSupport {
         return nickUpd;
     }
 
+    @RequiredStringValidator(message = "Debe de insertar un nick")
     public void setNickUpd(String nickUpd) {
         this.nickUpd = nickUpd;
     }
 
-    
 }

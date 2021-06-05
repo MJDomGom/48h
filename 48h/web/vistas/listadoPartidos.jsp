@@ -90,13 +90,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <s:iterator value="listaPartidos">
+                                <s:iterator value="listaPartidos" status="status">
                                     <tr>
                                         <td class="text-center"><s:property value="%{local}"></s:property></td>
                                         <td class="text-center"><s:property value="%{visitante}"></s:property></td>
                                         <td class="text-center"><s:property value="%{resultado}"></s:property></td>
                                         <td class="text-center"><s:property value="%{fecha}"></s:property></td>
-                                        <td class="text-center"><s:property value="listaJuegan"></s:property></td>
+                                        <td class="text-center"><s:property value="listaInstalaciones[#status.count-1]"></s:property></td>
                                         <s:if test="%{#session.rol == 'Gerente'}">
                                             <td style="width: 33px; margin: 0 auto;">
                                                 <s:form action="deletePartidos">

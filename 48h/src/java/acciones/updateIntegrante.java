@@ -19,6 +19,7 @@ import java.util.List;
  * @author fedev
  */
 public class updateIntegrante extends ActionSupport {
+
     String oculto;
     String nombre;
     String apellidos;
@@ -26,6 +27,7 @@ public class updateIntegrante extends ActionSupport {
     String equipo;
     List<Integrante> listaIntegrante = new ArrayList();
     Integrante nuevo = new Integrante();
+
     public List<Integrante> getListaIntegrante() {
         return listaIntegrante;
     }
@@ -33,6 +35,7 @@ public class updateIntegrante extends ActionSupport {
     public void setListaIntegrante(List<Integrante> listaIntegrante) {
         this.listaIntegrante = listaIntegrante;
     }
+
     public updateIntegrante() {
     }
 
@@ -43,12 +46,12 @@ public class updateIntegrante extends ActionSupport {
     public void setOculto(String oculto) {
         this.oculto = oculto;
     }
-    
 
     public String getNombre() {
         return nombre;
     }
-    @RequiredStringValidator (message = "Debe especificar un nombre")
+
+    @RequiredStringValidator(message = "Debe especificar un nombre")
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -57,6 +60,7 @@ public class updateIntegrante extends ActionSupport {
         return apellidos;
     }
 
+    @RequiredStringValidator(message = "Debe de insertar unos apellidos")
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
@@ -76,7 +80,7 @@ public class updateIntegrante extends ActionSupport {
     public void setEquipo(String equipo) {
         this.equipo = equipo;
     }
-    
+
     @Override
     public String execute() throws Exception {
         nuevo.setDni(oculto);
@@ -89,5 +93,5 @@ public class updateIntegrante extends ActionSupport {
         listaIntegrante = new integranteDAO().listadoIntegrantes();
         return SUCCESS;
     }
-    
+
 }

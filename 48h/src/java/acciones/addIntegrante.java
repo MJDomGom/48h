@@ -10,6 +10,7 @@ import WS.Integrante;
 import WS.equipoCliente;
 import WS.integranteCliente;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import dao.integranteDAO;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,7 @@ import javax.ws.rs.core.GenericType;
  * @author fedev
  */
 public class addIntegrante extends ActionSupport {
+
     String dni;
     String nombre;
     String apellidos;
@@ -30,10 +32,12 @@ public class addIntegrante extends ActionSupport {
     Integrante nuevo = new Integrante();
     Equipo eq = new Equipo();
     integranteCliente cliente = new integranteCliente();
+
     public String getDni() {
         return dni;
     }
 
+    @RequiredStringValidator(message = "Debe especificar un dni")
     public void setDni(String dni) {
         this.dni = dni;
     }
@@ -50,6 +54,7 @@ public class addIntegrante extends ActionSupport {
         return nombre;
     }
 
+    @RequiredStringValidator(message = "Debe especificar un nombre")
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -58,6 +63,7 @@ public class addIntegrante extends ActionSupport {
         return apellidos;
     }
 
+    @RequiredStringValidator(message = "Debe especificar unos apellidos")
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
@@ -66,11 +72,10 @@ public class addIntegrante extends ActionSupport {
         return dorsal;
     }
 
+    @RequiredStringValidator(message = "Debe especificar un dorsal")
     public void setDorsal(int dorsal) {
         this.dorsal = dorsal;
     }
-
-
 
     public String getEquipo() {
         return equipo;
@@ -79,9 +84,10 @@ public class addIntegrante extends ActionSupport {
     public void setEquipo(String equipo) {
         this.equipo = equipo;
     }
+
     public addIntegrante() {
     }
-    
+
     @Override
     public String execute() throws Exception {
         eq.setNombre(equipo);
@@ -89,12 +95,13 @@ public class addIntegrante extends ActionSupport {
         nuevo.setDni(dni);
         nuevo.setDorsal(dorsal);
         nuevo.setNombre(nombre);
-        GenericType<Equipo> tipoGenerico = new GenericType<Equipo>(){};
+        GenericType<Equipo> tipoGenerico = new GenericType<Equipo>() {
+        };
         eq = clienteEq.find_XML(tipoGenerico, equipo);
         nuevo.setNombreEquipo(eq);
         cliente.create_XML(nuevo);
         listaIntegrante = new integranteDAO().listadoIntegrantes();
         return SUCCESS;
     }
-    
+
 }

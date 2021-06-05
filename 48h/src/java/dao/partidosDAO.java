@@ -27,6 +27,7 @@ public class partidosDAO {
     public List<Partidos> listaPartidos;
     public List<Jugados> listaJugados;
     public List<Juegan> listaJuegan;
+    public List<Instalaciones> listaInstalaciones;
     public Partidos partido;
 
     public List<Partidos> listadoPartidos() {
@@ -83,5 +84,21 @@ public class partidosDAO {
         partido = (Partidos) q.uniqueResult();
         tx.commit();
         return partido;
+    }
+
+    public void addJuegan(Juegan j) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        session.save(j);
+        tx.commit();
+    }
+
+    public List<Instalaciones> listadoInstalaciones() {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        Query q = session.createQuery("SELECT i.nombre FROM Instalaciones i, Partidos p, Juegan j WHERE p.idPartido = j.partidos and i.id = j.instalaciones");
+        listaInstalaciones = (List<Instalaciones>) q.list();
+        tx.commit();
+        return listaInstalaciones;
     }
 }

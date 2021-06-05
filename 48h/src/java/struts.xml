@@ -95,8 +95,8 @@
             <result name="success">vistas/listadoPartidos.jsp</result>
         </action>
         
-        <action name="addPartidosRedirect" >
-            <result>vistas/addPartido.jsp</result>
+        <action name="addPartidosRedirect" class="acciones.addPartidosRedirect">
+            <result name="success">vistas/addPartido.jsp</result>
         </action>
     </package>
     <package name="equipos" extends="struts-default">
