@@ -24,7 +24,7 @@ public class accionesLogin extends ActionSupport {
     private Map session;
     private List<Partidos> listaPartidos;
     private List<Instalaciones> listaInstalaciones;
-    private List<Juegan> listaJuegan;
+
     public accionesLogin() {
     }
 
@@ -36,8 +36,7 @@ public class accionesLogin extends ActionSupport {
             session.put("password", this.getPassword());
             session.put("rol", user.getRol());
             listaPartidos = new partidosDAO().listadoPartidos();
-            listaJuegan = new partidosDAO().listadoJuegan();
-            listaInstalaciones = new partidosDAO().buscarInstalaciones(listaPartidos, listaJuegan);
+            listaInstalaciones = new partidosDAO().listadoInstalaciones();
             return SUCCESS;
         } else {
             addFieldError("login", "El usuario o la contraseña no existen en el sistema");
@@ -78,15 +77,4 @@ public class accionesLogin extends ActionSupport {
     public void setListaInstalaciones(List<Instalaciones> listaInstalaciones) {
         this.listaInstalaciones = listaInstalaciones;
     }
-
-    public List<Juegan> getListaJuegan() {
-        return listaJuegan;
-    }
-
-    public void setListaJuegan(List<Juegan> listaJuegan) {
-        this.listaJuegan = listaJuegan;
-    }
-    
-    
-
 }

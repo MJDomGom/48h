@@ -40,7 +40,7 @@
                     </div>
                     <section class="text-light d-inline-block float-none d-lg-flex justify-content-lg-center" style="background: rgb(246,246,246); margin-top: 30px; padding-right: 140px;">
                         <div class="form-container">
-                            <s:form action="addEstadistica" method="post">
+                            <s:form action="addEstadisticas" method="post">
                                 <div class="form-group"><s:textfield type="number" min="1" name="partido" label="ID Partido" placeholder="ID Partido" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
                                 <div class="form-group"><s:textfield name="golesTot" label="Resultado (L-V)" placeholder="Resultado (L-V)" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
                                 <div class="form-group"><s:textfield name="tirosPuerta" label="Tiros a puerta (L-V)" placeholder="Tiros a puerta (L-V)" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>

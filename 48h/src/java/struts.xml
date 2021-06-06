@@ -169,7 +169,7 @@
             <result>vistas/addEstadisticas.jsp</result>
         </action>
         
-        <action name="addEstadistica" class="acciones.estadisticas.addEstadisticas">
+        <action name="addEstadisticas" class="acciones.estadisticas.addEstadisticas">
             <result name="success">vistas/listadoEstadisticas.jsp</result>
             <result name="input">vistas/addEstadisticas.jsp</result>
             <result name="error">vistas/addEstadisticas.jsp</result>
