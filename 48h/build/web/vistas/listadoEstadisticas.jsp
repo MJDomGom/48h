@@ -11,6 +11,7 @@
 
         <%-- FAVICON --%>
         <link rel="icon" type="image/ico" href="${pageContext.request.contextPath}/vistas/assets/img/favicon.ico">
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -32,9 +33,9 @@
             <section class="clean-block slider dark">
                 <div class="container">
                     <table style="margin-top: 10px; margin-bottom: 15px; padding-right: 30px">
-                        <th>             
+                        <th>
                             <s:form action="cargarPartidos">
-                                <s:submit name="instalaciones" cssClass="btn btn-primary text-dark bg-light border-dark" value="Partidos"></s:submit>
+                                <s:submit cssClass="btn btn-primary text-dark bg-light border-dark" value="Partidos"></s:submit>
                             </s:form>
                         </th>
                         <th>/</th>
@@ -96,7 +97,7 @@
                         <tbody>
                             <s:iterator value="listaEstadisticas">
                                 <tr>
-                                    <td class="text-center"><s:property value="%{partidos.idPartido}"></s:property></td>
+                                    <td class="text-center"><s:property value="%{partidos}"></s:property></td>
                                     <td class="text-center"><s:property value="%{golesTot}"></s:property></td>
                                     <td class="text-center"><s:property value="%{tirosPuerta}"></s:property></td>
                                     <td class="text-center"><s:property value="%{amarillas}"></s:property></td>

@@ -11,12 +11,16 @@
     </package>
     
     <package name="usuario" extends="struts-default">
-        <action name="loginCheck" class = "acciones.accionesLogin">
+        <action name="loginCheck" class = "acciones.usuarios.accionesLogin">
             <result name="success">vistas/listadoPartidos.jsp</result>
             <result name="error">vistas/login.jsp</result>
         </action>
         
-        <action name="redirectUsuario" class="acciones.cargarUsuarios">
+        <action name="cargarUsuarios" class="acciones.usuarios.cargarUsuarios">
+            <result name="success" >vistas/listadoUsuarios.jsp</result>
+        </action>
+        
+        <action name="redirectUsuario" class="acciones.usuarios.cargarUsuarios">
             <result>vistas/listadoUsuarios.jsp</result>
         </action>
         
@@ -24,16 +28,16 @@
             <result>vistas/addUsuarios.jsp</result>
         </action>
         
-        <action name="updateUsuarioRedirect" class="acciones.updateRedirect">
+        <action name="updateUsuarioRedirect" class="acciones.usuarios.updateRedirect">
             <result name="success">vistas/updateUsuarios.jsp</result>
         </action>
         
-        <action name="updateUsuario" class="acciones.updateUsuario">
+        <action name="updateUsuario" class="acciones.usuarios.updateUsuario">
             <result name="success">vistas/listadoUsuarios.jsp</result>
             <result name="input">vistas/updateUsuarios.jsp</result>
         </action>
         
-        <action name="addUsuario" class="acciones.addUsuario">
+        <action name="addUsuario" class="acciones.usuarios.addUsuario">
             <result name="success">vistas/listadoUsuarios.jsp</result>
             <result name="input">vistas/addUsuarios.jsp</result>
         </action>
@@ -42,28 +46,26 @@
             <result>vistas/registrarUsuario.jsp</result>
         </action>
         
-        <action name="registrarUsuario" class="acciones.registrarUsuario">
+        <action name="registrarUsuario" class="acciones.usuarios.registrarUsuario">
             <result name="success">vistas/listadoUsuarios.jsp</result>
             <result name="input">vistas/registrarUsuarios.jsp</result>
         </action>
         
-        <action name="deleteUsuario" class="acciones.borrarUsuario">
+        <action name="deleteUsuario" class="acciones.usuarios.borrarUsuario">
             <result name="success">vistas/listadoUsuarios.jsp</result>
         </action>
         
-        <action name="redirectLogout" class="acciones.logout">
+        <action name="redirectLogout" class="acciones.usuarios.logout">
             <result name="success">vistas/login.jsp</result>
         </action>
-        
-        
     </package>
     
     <package name="instalaciones" extends="struts-default">
-        <action name="redirectInstalaciones" class="acciones.cargarInstalaciones">
+        <action name="redirectInstalaciones" class="acciones.instalaciones.cargarInstalaciones">
             <result>vistas/listadoInstalaciones.jsp</result>
         </action>
         
-        <action name="deleteInstalaciones" class="acciones.borrarInstalaciones">
+        <action name="deleteInstalaciones" class="acciones.instalaciones.borrarInstalaciones">
             <result name="success">vistas/listadoInstalaciones.jsp</result>
         </action>
         
@@ -71,48 +73,58 @@
             <result>vistas/addInstalaciones.jsp</result>
         </action>
         
-        <action name="addInstalacion" class="acciones.addInstalacion">
+        <action name="addInstalacion" class="acciones.instalaciones.addInstalacion">
             <result name="success">vistas/listadoInstalaciones.jsp</result>
             <result name="input">vistas/addInstalaciones.jsp</result>
         </action>
         
-        <action name="updateInstalacionesRedirect" class="acciones.updateRedirectInstalaciones">
+        <action name="updateInstalacionesRedirect" class="acciones.instalaciones.updateRedirectInstalaciones">
             <result name="success">vistas/updateInstalaciones.jsp</result>
         </action>
         
-        <action name="updateInstalacion" class="acciones.updateInstalacion">
+        <action name="updateInstalacion" class="acciones.instalaciones.updateInstalacion">
             <result name="success">vistas/listadoInstalaciones.jsp</result>
             <result name="input">vistas/updateInstalaciones.jsp</result>
         </action>
+        
+        <action name="cargarInstalaciones" class="acciones.instalaciones.cargarInstalaciones">
+            <result name="success" >vistas/listadoInstalaciones.jsp</result>
+        </action>
+        
     </package>
     
     <package name="partidos" extends="struts-default">
-        <action name="deletePartidos" class="acciones.borrarPartidos">
+        <action name="deletePartidos" class="acciones.partidos.borrarPartidos">
             <result name="success">vistas/listadoPartidos.jsp</result>
         </action>
         
-        <action name="addPartido" class="acciones.addPartido">
+        <action name="addPartido" class="acciones.partidos.addPartido">
             <result name="success">vistas/listadoPartidos.jsp</result>
         </action>
         
-        <action name="addPartidosRedirect" >
-            <result>vistas/addPartido.jsp</result>
+        <action name="addPartidosRedirect" class="acciones.partidos.addPartidosRedirect">
+            <result name="success">vistas/addPartido.jsp</result>
+        </action>
+        
+        <action name="cargarPartidos" class="acciones.partidos.cargarPartidos">
+            <result>vistas/listadoPartidos.jsp</result>
         </action>
     </package>
+    
     <package name="equipos" extends="struts-default">
-        <action name="cargarEquipos" class="acciones.cargarEquipos">
+        <action name="cargarEquipos" class="acciones.equipo.cargarEquipos">
             <result name="success">vistas/listadoEquipo.jsp</result>
         </action>
-        <action name="updateEquiposRedirect" class="acciones.updateEquiposRedirect">
+        <action name="updateEquiposRedirect" class="acciones.equipo.updateEquiposRedirect">
             <result>vistas/updateEquipo.jsp</result>
         </action>
-        <action name="updateEquipo" class="acciones.updateEquipo">
+        <action name="updateEquipo" class="acciones.equipo.updateEquipo">
             <result>vistas/listadoEquipo.jsp</result>
         </action>
-        <action name="deleteEquipos" class="acciones.deleteEquipos">
+        <action name="deleteEquipos" class="acciones.equipo.deleteEquipos">
             <result name="success">vistas/listadoEquipo.jsp</result>
         </action>
-        <action name="addEquipo" class="acciones.addEquipo">
+        <action name="addEquipo" class="acciones.equipo.addEquipo">
             <result name="success">vistas/listadoEquipo.jsp</result>
             <result name="input">vistas/addEquipo.jsp</result>
         </action>
@@ -120,23 +132,24 @@
             <result>vistas/addEquipo.jsp</result>
         </action>
     </package>
+    
     <package name="integrantes" extends="struts-default">
-        <action name="addIntegranteRedirect" class="acciones.addIntegranteRedirect">
+        <action name="addIntegranteRedirect" class="acciones.integrantes.addIntegranteRedirect">
             <result name="success">vistas/addIntegrante.jsp</result>
         </action>
-        <action name="addIntegrante" class="acciones.addIntegrante">
+        <action name="addIntegrante" class="acciones.integrantes.addIntegrante">
             <result name="success">vistas/listadoIntegrantes.jsp</result>
         </action>
-        <action name="cargarIntegrantes" class="acciones.cargarIntegrantes">
+        <action name="cargarIntegrantes" class="acciones.integrantes.cargarIntegrantes">
             <result name="success" >vistas/listadoIntegrantes.jsp</result>
         </action>
-        <action name="deleteIntegrante"  class="acciones.deleteIntegrante">
+        <action name="deleteIntegrante"  class="acciones.integrantes.deleteIntegrante">
             <result name="success">vistas/listadoIntegrantes.jsp</result>
         </action>
-        <action name="updateIntegranteRedirect" class="acciones.updateIntegranteRedirect">
+        <action name="updateIntegranteRedirect" class="acciones.integrantes.updateIntegranteRedirect">
             <result name="success">vistas/updateIntegrante.jsp</result>
         </action>
-        <action name="updateIntegrante" class="acciones.updateIntegrante">
+        <action name="updateIntegrante" class="acciones.integrantes.updateIntegrante">
             <result name="success">vistas/listadoIntegrantes.jsp</result>
             <result name="input">vistas/updateIntegrante.jsp</result>
         </action>
@@ -144,22 +157,26 @@
     
     <package name="estadisticas" extends="struts-default">
         
-        <action name="redirectEstadisticas" class="acciones.cargarEstadisticas">
+        <action name="redirectEstadisticas" class="acciones.estadisticas.cargarEstadisticas">
             <result>vistas/listadoEstadisticas.jsp</result>
         </action>
         
-        <action name="deleteEstadisticas" class="acciones.borrarEstadisticas">
+        <action name="deleteEstadisticas" class="acciones.estadisticas.borrarEstadisticas">
             <result name="success">vistas/listadoEstadisticas.jsp</result>
         </action>
         
-        <action name="addEstadisticasRedirect" class="acciones.redirectEstadisticas">
+        <action name="addEstadisticasRedirect" class="acciones.estadisticas.redirectEstadisticas">
             <result>vistas/addEstadisticas.jsp</result>
         </action>
         
-        <action name="addEstadistica" class="acciones.addEstadisticas">
+        <action name="addEstadisticas" class="acciones.estadisticas.addEstadisticas">
             <result name="success">vistas/listadoEstadisticas.jsp</result>
             <result name="input">vistas/addEstadisticas.jsp</result>
             <result name="error">vistas/addEstadisticas.jsp</result>
+        </action>
+        
+        <action name="cargarEstadisticas" class="acciones.estadisticas.cargarEstadisticas">
+            <result name="success" >vistas/listadoEstadisticas.jsp</result>
         </action>
         
     </package>

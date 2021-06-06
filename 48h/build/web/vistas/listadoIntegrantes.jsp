@@ -33,9 +33,9 @@
             <section class="clean-block slider dark">
                 <div class="container">
                     <table style="margin-top: 10px; margin-bottom: 15px; padding-right: 30px">
-                        <th>             
+                        <th>
                             <s:form action="cargarPartidos">
-                                <s:submit name="instalaciones" cssClass="btn btn-primary text-dark bg-light border-dark" value="Partidos"></s:submit>
+                                <s:submit cssClass="btn btn-primary text-dark bg-light border-dark" value="Partidos"></s:submit>
                             </s:form>
                         </th>
                         <th>/</th>

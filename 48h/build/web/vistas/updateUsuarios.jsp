@@ -47,9 +47,6 @@
                                 <s:hidden name="nickUpd" value="%{session.NickUpd}"></s:hidden>
                                 <s:submit name="btnupdate" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light" value="Modificar"></s:submit>
                             </s:form>
-                            <s:form action="cargarUsuarios">
-                                <s:submit name = "btnCancelar" value="Cancelar" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light"></s:submit>
-                            </s:form>
                         </div>
                     </section>
                 </div>

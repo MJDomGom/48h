@@ -40,7 +40,7 @@
                     </div>
                     <section class="text-light d-inline-block float-none d-lg-flex justify-content-lg-center" style="background: rgb(246,246,246); margin-top: 30px; padding-right: 140px;">
                         <div class="form-container">
-                            <s:form action="addEstadisticas" method="post">
+                            <s:form action="addEstadistica" method="post">
                                 <div class="form-group"><s:textfield type="number" min="1" name="partido" label="ID Partido" placeholder="ID Partido" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
                                 <div class="form-group"><s:textfield name="golesTot" label="Resultado (L-V)" placeholder="Resultado (L-V)" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
                                 <div class="form-group"><s:textfield name="tirosPuerta" label="Tiros a puerta (L-V)" placeholder="Tiros a puerta (L-V)" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
@@ -48,10 +48,7 @@
                                 <div class="form-group"><s:textfield name="rojas" label="Rojas (L-V)" placeholder="Rojas (L-V)" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
                                 <div class="form-group"><s:textfield name="azules" label="Azules (L-V)" placeholder="Azules (L-V)"  class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
                                 <s:submit name = "btnAdd" value="Añadir" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light"></s:submit>
-                            </s:form>  
-                            <s:form action="cargarEstadisticas">
-                                <s:submit name = "btnCancelar" value="Cancelar" cssStyle="height: 40px; width: 500px; margin: 10px; margin-bottom: 50px;" cssClass="btn btn-primary btn-block text-light bg-dark border-light"></s:submit>
-                            </s:form>
+                            </s:form>   
                         </div>
                     </section>
                 </div>
