@@ -41,16 +41,16 @@
                     <section class="text-light d-inline-block float-none d-lg-flex justify-content-lg-center" style="background: rgb(246,246,246); margin-top: 30px; padding-right: 240px;">
                         <div class="form-container">
                             <s:form action="addPartido" method="post">
-                                <div class="form-group"><s:textfield name="resultado" label="Resultado (x-x)" placeholder="(x-x)" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
-                                <div class="form-group"><s:textfield name="fecha" label="Fecha del partido (dd-MM-yyyy)" placeholder="(dd-MM-yyyy)" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
+                                <div class="form-group"><s:textfield name="resultado" label="Resultado (x-x)" placeholder="Resultado (x-x)" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
+                                <div class="form-group"><s:textfield name="fecha" label="Fecha del partido (dd-MM-yyyy)" placeholder="Fecha del partido (dd-MM-yyyy)" class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"></s:textfield></div>
                                 <s:select label="Equipo local" 
-                                          headerKey="-1" headerValue="Equipos disponibles"
+                                          headerKey="-1" headerValue="Equipo Local"
                                           name="local"
                                           list="listaEquipos"
                                           listValue="nombre"
                                           class="form-control" cssStyle="height: 40px; width: 500px; margin: 10px; text-align: center;"/>
                                 <s:select label="Equipo visitante" 
-                                          headerKey="-1" headerValue="Equipos disponibles"
+                                          headerKey="-1" headerValue="Equipo Visitante"
                                           name="visitante"
                                           list="listaEquipos"
                                           listValue="nombre"
